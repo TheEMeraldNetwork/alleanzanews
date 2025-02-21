@@ -1,283 +1,727 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentiment Analysis Report</title>
-    <style>
-        body {font-family: Arial, sans-serif; margin: 20px; line-height: 1.6;}
-        table {width: 100%; border-collapse: collapse; margin-bottom: 20px;}
-        th, td {border: 1px solid #ddd; padding: 8px; text-align: left;}
-        th {background-color: #f2f2f2;}
-        tr:nth-child(even) {background-color: #f9f9f9;}
-        .positive {color: green;}
-        .negative {color: red;}
-        .neutral {color: gray;}
-        .section {margin-bottom: 30px;}
-        .highlight {background-color: #fff3cd; padding: 10px; border-radius: 5px;}
-        .content-preview {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 5px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Sentiment Analysis Report</h1>
-    <p>Generated on: 2025-01-29 22:32:19</p>
-    
-    <div class="section">
-        <h2>Summary</h2>
-        <p>Total articles processed: 22</p>
-        <p>Positive articles: 3</p>
-        <p>Negative articles: 6</p>
-        <p>Neutral articles: 13</p>
-    </div>
-
-    <div class="section">
-        <h2>Source Analysis</h2>
-        <div class="highlight">
-            <h3>Sources Found:</h3>
-            <p><strong>https://www.unideassicurazioni.it/:</strong> 14 articles</p><p><strong>https://www.vitanuova.it/:</strong> 8 articles</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Detailed Analysis</h2>
-        <table>
-            <tr>
-                <th>Date</th>
-                <th>Source</th>
-                <th>Title</th>
-                <th>Sentiment</th>
-                <th>Preview</th>
-                <th>URL</th>
-            </tr>
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Analisi News Aziendali</title>
+        <style>
+            :root {
+                --primary-color: #1B1B1B;
+                --secondary-color: #404040;
+                --light-gray: #F5F5F5;
+                --border-color: #E0E0E0;
+            }
             
-<tr>
-    <td>2025-01-29 22:08:35</td>
-    <td>https://www.unideassicurazioni.it/</td>
-    <td>Unidea Assicurazioni</td>
-    <td class="neutral">Neutral (0.00)</td>
-    <td><div class="content-preview">Se ti stai domandando chi siamo, la risposta è semplice. Siamo una agenzia assicurativa e molto di più. Oggi, Unidea Assicurazioni è la più grande agenzia assicurativa indipendente in Italia perchè la...</div></td>
-    <td><a href="https://www.unideassicurazioni.it/chi-siamo/" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:08:39</td>
-    <td>https://www.unideassicurazioni.it/</td>
-    <td>Unidea Assicurazioni</td>
-    <td class="neutral">Neutral (0.00)</td>
-    <td><div class="content-preview">Oggi operiamo attraverso la partnership con le maggiori Compagnie assicurative che lavorano in Italia e all’estero, fornendo così una delle più ampie offerte sul mercato. Siamo una delle poche imprese...</div></td>
-    <td><a href="https://www.unideassicurazioni.it/storia/" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:08:42</td>
-    <td>https://www.unideassicurazioni.it/</td>
-    <td>Unidea Assicurazioni</td>
-    <td class="neutral">Neutral (0.00)</td>
-    <td><div class="content-preview">Desideriamo guadagnare la tua fiducia e proporti una vasta scelta. Siamo riusciti con successo a posizionarci sul mercato assicurativo grazie anche alla nostra capacità di misurarci con le nuove e spe...</div></td>
-    <td><a href="https://www.unideassicurazioni.it/vision/" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:08:52</td>
-    <td>https://www.unideassicurazioni.it/</td>
-    <td>Unidea Assicurazioni</td>
-    <td class="neutral">Neutral (0.00)</td>
-    <td><div class="content-preview">Le nostre assicurazioni sono personalizzate sulle esigenze dei clienti. Grazie alla collaborazione con le principali Compagnie Assicurative che operano in Italia e all’estero, nonché una Società di Mu...</div></td>
-    <td><a href="https://www.unideassicurazioni.it/assicurazioni/" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:08:58</td>
-    <td>https://www.unideassicurazioni.it/</td>
-    <td>Unidea Assicurazioni</td>
-    <td class="negative">Negative (-0.80)</td>
-    <td><div class="content-preview">Polizza casa su misura del tuo stile di vita
-
-La polizza casa protegge il luogo più caro dai principali rischi, ma non solo. Possiamo tutelare anche tutte le altre tipologie di immobili. Infatti possi...</div></td>
-    <td><a href="https://www.unideassicurazioni.it/polizza-casa-e-altri-edifici/" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:09:01</td>
-    <td>https://www.unideassicurazioni.it/</td>
-    <td>Unidea Assicurazioni</td>
-    <td class="neutral">Neutral (0.10)</td>
-    <td><div class="content-preview">Un’agenzia assicurativa che lavora in partnership con le principali Compagnie Assicurative italiane ed estere
-
-La nostra forza è la possibilità di scegliere la polizza più adatta a te tra le offerte d...</div></td>
-    <td><a href="https://www.unideassicurazioni.it/polizza-infortuni/" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:09:21</td>
-    <td>https://www.unideassicurazioni.it/</td>
-    <td>Unidea Assicurazioni</td>
-    <td class="neutral">Neutral (0.00)</td>
-    <td><div class="content-preview">Un piano di previdenza integrativa, che si può costruire a partire da piccoli versamenti.
-
-Unidea Assicurazioni utilizza software professionali per ottenere la corretta proiezione dei risultati pensio...</div></td>
-    <td><a href="https://www.unideassicurazioni.it/polizza-previdenza/" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:09:34</td>
-    <td>https://www.unideassicurazioni.it/</td>
-    <td>Lavora con noi</td>
-    <td class="neutral">Neutral (0.00)</td>
-    <td><div class="content-preview">Con Unidea Assicurazioni potrai crescere professionalmente attraverso un piano di carriera con obiettivi prestabiliti e personalizzati, oltre a provvigioni ai massimi livelli.
-
-Se sei un neofita, ovve...</div></td>
-    <td><a href="https://www.unideassicurazioni.it/lavora-con-noi/" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:09:38</td>
-    <td>https://www.unideassicurazioni.it/</td>
-    <td>Unidea Assicurazioni</td>
-    <td class="neutral">Neutral (0.00)</td>
-    <td><div class="content-preview">Convenzione con il Gruppo Bossoni
-
-Gruppo Bossoni è concessionario ufficiale per i brand di FCA e da più di 30 anni un riferimento nel settore automotive per la provincia di Brescia.
-
-Una forza sempre...</div></td>
-    <td><a href="https://www.unideassicurazioni.it/convenzioni/" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:09:41</td>
-    <td>https://www.unideassicurazioni.it/</td>
-    <td>Unidea Assicurazioni</td>
-    <td class="neutral">Neutral (0.00)</td>
-    <td><div class="content-preview">Unidea Assicurazioni è l’agenzia assicurativa indipendente più grande in Italia. Abbiamo filiali in molte aree, navigando nella pagina puoi vedere dove si trovano tutte le agenzie Unidea Assicurazioni...</div></td>
-    <td><a href="https://www.unideassicurazioni.it/contatti/" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:09:54</td>
-    <td>https://www.unideassicurazioni.it/</td>
-    <td>Informativa potenziali assicurati</td>
-    <td class="negative">Negative (-0.39)</td>
-    <td><div class="content-preview">INFORMATIVA AL TRATTAMENTO DEI DATI PERSONALI DEI POTENZIALI ASSICURATI
-
-UNIDEA ASSICURAZIONI (CF: 03164800983), con sede legale in 25124 Brescia (BS), Via Malta n° 12, Agenzia assicurativa plurimanda...</div></td>
-    <td><a href="https://www.unideassicurazioni.it/informativa-potenziali-assicurati" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:10:07</td>
-    <td>https://www.unideassicurazioni.it/</td>
-    <td>Unidea Assicurazioni</td>
-    <td class="neutral">Neutral (0.00)</td>
-    <td><div class="content-preview">Le nostre assicurazioni sono personalizzate sulle esigenze dei clienti. Grazie alla collaborazione con le principali Compagnie Assicurative che operano in Italia e all’estero, nonché una Società di Mu...</div></td>
-    <td><a href="https://www.unideassicurazioni.it/assicurazioni" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:10:12</td>
-    <td>https://www.unideassicurazioni.it/</td>
-    <td>Unidea Assicurazioni</td>
-    <td class="neutral">Neutral (0.00)</td>
-    <td><div class="content-preview">Unidea Assicurazioni è l’agenzia assicurativa indipendente più grande in Italia. Abbiamo filiali in molte aree, navigando nella pagina puoi vedere dove si trovano tutte le agenzie Unidea Assicurazioni...</div></td>
-    <td><a href="https://www.unideassicurazioni.it/contatti" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:10:22</td>
-    <td>https://www.unideassicurazioni.it/</td>
-    <td>Unidea Assicurazioni</td>
-    <td class="positive">Positive (0.42)</td>
-    <td><div class="content-preview">L’informativa di seguito riportata, relativa all’uso dei cookie su questo sito web, è resa in attuazione del provvedimento del Garante per la protezione dei dati personali dell’8 maggio 2014 “Individu...</div></td>
-    <td><a href="https://www.unideassicurazioni.it/cookie-policy/" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:11:24</td>
-    <td>https://www.vitanuova.it/</td>
-    <td>Polizza Vita Caso Morte - Preventivo Online</td>
-    <td class="neutral">Neutral (-0.06)</td>
-    <td><div class="content-preview">Si tratta di due tipologie di prodotti diversi. Una TCM è progettata per fornire una copertura temporanea, ovvero per un periodo di tempo specifico. Puoi infatti scegliere la durata che preferisci (ad...</div></td>
-    <td><a href="https://www.vitanuova.it/assicurazione/vita" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:11:30</td>
-    <td>https://www.vitanuova.it/</td>
-    <td>Polizza Vita Caso Vita - Preventivo Online</td>
-    <td class="neutral">Neutral (0.00)</td>
-    <td><div class="content-preview">Il funzionamento di una polizza vita caso vita è subordinato alla tipologia di assicurazione che decidi di sottoscrivere. Le modalità sono molteplici ma possiamo riassumerle in:
-
-- Rendita immediata: ...</div></td>
-    <td><a href="https://www.vitanuova.it/preventivo/polizza-vita-caso-vita" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:11:38</td>
-    <td>https://www.vitanuova.it/</td>
-    <td>Polizza Unit Linked - Preventivo Online</td>
-    <td class="negative">Negative (-0.80)</td>
-    <td><div class="content-preview">Sottoscrivere una unit linked può essere una scelta vantaggiosa per diverse ragioni.
-
-Innanzitutto, ti permette di proteggere te stesso e i tuoi cari in caso di eventi imprevisti, come la morte o la p...</div></td>
-    <td><a href="https://www.vitanuova.it/preventivo/unit-linked" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:11:44</td>
-    <td>https://www.vitanuova.it/</td>
-    <td>Polizza Vita Mista - Preventivo Online</td>
-    <td class="negative">Negative (-0.80)</td>
-    <td><div class="content-preview">Una polizza vita mista offre numerosi vantaggi fiscali al sottoscrittore, sia in termini di detrazione che di tassazione. Vediamoli nel dettaglio.
-
-- Detrazione: il premio versato per la polizza vita ...</div></td>
-    <td><a href="https://www.vitanuova.it/preventivo/polizza-vita-mista" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:11:47</td>
-    <td>https://www.vitanuova.it/</td>
-    <td>Polizza Unit Linked - Preventivo Online</td>
-    <td class="negative">Negative (-0.80)</td>
-    <td><div class="content-preview">Sottoscrivere una unit linked può essere una scelta vantaggiosa per diverse ragioni.
-
-Innanzitutto, ti permette di proteggere te stesso e i tuoi cari in caso di eventi imprevisti, come la morte o la p...</div></td>
-    <td><a href="https://www.vitanuova.it/preventivo/unit-linked/" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:11:55</td>
-    <td>https://www.vitanuova.it/</td>
-    <td>Assicurazioni e sostenibilità</td>
-    <td class="positive">Positive (0.22)</td>
-    <td><div class="content-preview">Ania ha pubblicato un’indagine che evidenzia il ruolo chiave delle assicurazioni in termini di politiche ESG (Environmental, Social and Governance).
-
-Le compagnie – in entrambe le funzioni svolte, inv...</div></td>
-    <td><a href="https://blog.vitanuova.it/ania-e-forum-finanza-sostenibile-2023/" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:11:59</td>
-    <td>https://www.vitanuova.it/</td>
-    <td>Polizze vita: una guida sulla tassazione e le detrazioni</td>
-    <td class="negative">Negative (-0.46)</td>
-    <td><div class="content-preview">Uno dei fattori d’interesse delle polizze vita come strumento d’investimento sono le modalità di tassazione dei rendimenti e le detrazioni fiscali a cui è possibile accedere. Sono elementi importanti ...</div></td>
-    <td><a href="https://blog.vitanuova.it/polizza-vita-tassazione-detrazioni/" target="_blank">Link</a></td>
-</tr>
-
-<tr>
-    <td>2025-01-29 22:12:06</td>
-    <td>https://www.vitanuova.it/</td>
-    <td>Il blog delle assicurazioni online</td>
-    <td class="positive">Positive (0.15)</td>
-    <td><div class="content-preview">Polizza vita e fondo pensione sono entrambi strumenti che hanno il fine ultimo di costruire una rendita economica per la vecchiaia, destinata ad affiancare gli assegni pensionistici o a garantire sere...</div></td>
-    <td><a href="https://blog.vitanuova.it/" target="_blank">Link</a></td>
-</tr>
-
-        </table>
-    </div>
-</body>
-</html>
+            body {
+                font-family: "Helvetica Neue", Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                color: var(--primary-color);
+                background-color: white;
+            }
+            
+            .header {
+                padding: 2rem;
+                text-align: center;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+                font-weight: 300;
+                margin: 0;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+            
+            .timestamp {
+                color: var(--secondary-color);
+                font-size: 0.9rem;
+                margin-top: 1rem;
+            }
+            
+            .company-section {
+                padding: 2rem;
+                margin: 2rem auto;
+                max-width: 1200px;
+            }
+            
+            .company-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 2rem;
+            }
+            
+            .company-name {
+                font-size: 1.8rem;
+                font-weight: 300;
+                text-transform: uppercase;
+            }
+            
+            .article-count {
+                color: var(--secondary-color);
+                font-size: 1.2rem;
+            }
+            
+            .wordcloud-container {
+                margin: 2rem 0;
+                text-align: center;
+            }
+            
+            .wordcloud-container img {
+                max-width: 100%;
+                height: auto;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            
+            .news-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin: 2rem 0;
+            }
+            
+            .news-item {
+                background: white;
+                border: 1px solid var(--border-color);
+                padding: 1.5rem;
+                transition: transform 0.3s ease;
+            }
+            
+            .news-item:hover {
+                transform: translateY(-5px);
+            }
+            
+            .news-item h3 {
+                font-size: 1.2rem;
+                font-weight: 400;
+                margin: 0 0 1rem 0;
+            }
+            
+            .news-item p {
+                color: var(--secondary-color);
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+            
+            .news-meta {
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid var(--border-color);
+                font-size: 0.8rem;
+                color: var(--secondary-color);
+            }
+            
+            .read-more {
+                display: inline-block;
+                margin-top: 1rem;
+                color: var(--primary-color);
+                text-decoration: none;
+                font-size: 0.9rem;
+                transition: color 0.3s ease;
+            }
+            
+            .read-more:hover {
+                color: var(--secondary-color);
+            }
+            
+            .show-more {
+                display: block;
+                width: 200px;
+                margin: 2rem auto;
+                padding: 1rem;
+                background: var(--primary-color);
+                color: white;
+                border: none;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: background-color 0.3s ease;
+            }
+            
+            .show-more:hover {
+                background-color: var(--secondary-color);
+            }
+            
+            .analysis-section {
+                padding: 2rem;
+                margin: 2rem auto;
+                max-width: 1200px;
+                text-align: center;
+            }
+            
+            .analysis-section h2 {
+                font-size: 1.8rem;
+                font-weight: 300;
+                text-transform: uppercase;
+                margin-bottom: 2rem;
+            }
+            
+            .venn-container {
+                margin: 2rem 0;
+            }
+            
+            .venn-container img {
+                max-width: 100%;
+                height: auto;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            
+            .reviews-section {
+                margin-top: 3rem;
+                padding: 2rem;
+                background: var(--light-gray);
+                border-radius: 8px;
+            }
+            
+            .reviews-header {
+                font-size: 1.5rem;
+                font-weight: 300;
+                margin-bottom: 1.5rem;
+                text-transform: uppercase;
+                color: var(--primary-color);
+            }
+            
+            .review-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .review-item {
+                background: white;
+                padding: 1.5rem;
+                border-radius: 4px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            
+            .review-rating {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: #FFB400;
+                margin-bottom: 0.5rem;
+            }
+            
+            .review-source {
+                display: inline-block;
+                padding: 0.25rem 0.5rem;
+                background: var(--light-gray);
+                border-radius: 4px;
+                font-size: 0.8rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            @media (max-width: 768px) {
+                .company-section,
+                .analysis-section {
+                    padding: 1rem;
+                }
+                
+                .news-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Analisi News Aziendali</h1>
+            <div class="timestamp">Generato il: 20/02/2025 12:30</div>
+        </div>
+    
+        <section class="company-section">
+            <div class="company-header">
+                <h2 class="company-name">Alleanza Assicurazioni</h2>
+                <span class="article-count">10 articoli</span>
+            </div>
+            
+            <div class="wordcloud-container">
+                <img src="wordcloud_Alleanza_Assicurazioni.png" alt="Word Cloud">
+            </div>
+            
+            <div class="news-grid">
+        
+                <article class="news-item">
+                    <h3>Claudia Ghinfanti (Alleanza Ass.): "In atto un grande Trasferimento di Competenze dalla Rete ai Clienti"</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="https://www.pltv.it/tv/reportage/claudia-ghinfanti-alleanza-ass-in-atto-un-grande-trasferimento-di-competenze-dalla-rete-ai-clienti" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+                <article class="news-item">
+                    <h3>Giancarlo Fancel: “Alleanza e la sua Rete fondamentali nel nuovo Piano Generali”</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="https://www.pltv.it/tv/giancarlo-fancel-alleanza-e-la-sua-rete-fondamentali-nel-nuovo-piano-generali" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+                <article class="news-item">
+                    <h3>Davide Passero: “Alleanza tra i 4 Big in Italia, il frutto di 10 anni di Crescita sostenibile”</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="https://www.pltv.it/tv/reportage/davide-passero-alleanza-tra-i-4-big-in-italia-il-frutto-di-10-anni-di-crescita-sostenibile" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+                <article class="news-item">
+                    <h3>Alleanza Assicurazioni: dalla convention le priorità strategiche per crescere</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="https://www.wallstreetitalia.com/alleanza-assicurazioni-dalla-convention-le-priorita-strategiche-per-crescere/" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+                <article class="news-item">
+                    <h3>Alleanza Assicurazioni: i numeri del “Patto per la crescita sostenibile” tra nuove competenze finanziarie e IA</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="http://www.msn.com/it-it/money/notizie/alleanza-assicurazioni-i-numeri-del-patto-per-la-crescita-sostenibile-tra-nuove-competenze-finanziarie-e-ia/ar-AA1yxe1I%3Focid%3Dfinance-verthp-feeds%26apiversion%3Dv2%26noservercache%3D1%26domshim%3D1%26renderwebcomponents%3D1%26wcseo%3D1%26batchservertelemetry%3D1%26noservertelemetry%3D1" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+            </div>
+        
+            <div class="reviews-section">
+                <h3 class="reviews-header">Recensioni dei Clienti</h3>
+                <div class="review-grid">
+            
+                    <article class="review-item">
+                        <div class="review-rating">4.5/5</div>
+                        <div class="review-source">Google Reviews</div>
+                        <h4>Esperienza positiva</h4>
+                        <p>Ottima gestione della pratica e consulenza professionale. Consigliato.</p>
+                        <div class="news-meta">
+                            <div>Data: 2024-02-22</div>
+                        </div>
+                    </article>
+                
+                    <article class="review-item">
+                        <div class="review-rating">4/5</div>
+                        <div class="review-source">Trustpilot</div>
+                        <h4>Servizio efficiente</h4>
+                        <p>Gestione rapida e professionale delle pratiche assicurative.</p>
+                        <div class="news-meta">
+                            <div>Data: 2024-02-19</div>
+                        </div>
+                    </article>
+                
+                </div>
+            </div>
+            
+            <button class="show-more" onclick="toggleArchivedNews('alleanza_assicurazioni')">
+                Mostra altri articoli
+            </button>
+            <div id="archived-alleanza_assicurazioni" class="news-grid" style="display: none;">
+            
+                    <article class="news-item">
+                        <h3>Alleanza Assicurazioni le priorità | soddisfazione cliente e leadership su protezione e risparmio</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.00</div>
+                        </div>
+                        <a href="https://www.zazoom.it/2025-02-06/alleanza-assicurazioni-le-priorita-soddisfazione-cliente-e-leadership-su-protezione-e-risparmio/16328243/" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+                    <article class="news-item">
+                        <h3>Alleanza Assicurazioni, Passero presenta le priorità strategiche</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.00</div>
+                        </div>
+                        <a href="https://www.teleborsa.it/AMP/News/2025/02/06/alleanza-assicurazioni-passero-presenta-le-priorita-strategiche-203.html" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+                    <article class="news-item">
+                        <h3>ALLEANZA ASSICURAZIONI PRESENTA LE PRIORITA’ STRATEGICHE</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.00</div>
+                        </div>
+                        <a href="https://www.tuttointermediari.it/alleanza-assicurazioni-presenta-le-priorita-strategiche/" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+                    <article class="news-item">
+                        <h3>Generali, presentate le priorità strategiche di Alleanza Assicurazioni alla Convention 2025</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.00</div>
+                        </div>
+                        <a href="https://www.affaritaliani.it/economia/notizie-aziende/generali-presentate-priorita-strategiche-alleanza-assicurazioni-convention-2025-955402.html" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+                    <article class="news-item">
+                        <h3>Alleanza Assicurazioni: i numeri del “Patto per la crescita sostenibile” tra nuove competenze f...</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.00</div>
+                        </div>
+                        <a href="https://www.firstonline.info/alleanza-assicurazioni-i-numeri-del-patto-per-la-crescita-sostenibile-tra-nuove-competenze-finanziarie-e-ia/" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+            </div>
+            
+        </section>
+        
+        <section class="company-section">
+            <div class="company-header">
+                <h2 class="company-name">Unidea Assicurazioni</h2>
+                <span class="article-count">10 articoli</span>
+            </div>
+            
+            <div class="wordcloud-container">
+                <img src="wordcloud_Unidea_Assicurazioni.png" alt="Word Cloud">
+            </div>
+            
+            <div class="news-grid">
+        
+                <article class="news-item">
+                    <h3>Catastrofi naturali, un’idea di decreto attuativo</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="https://www.insurancetrade.it/insurance/contenuti/osservatori/14821/catastrofi-naturali-un-idea-di-decreto-attuativo" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+                <article class="news-item">
+                    <h3>“La nostra mission è offrire il servizio migliore a famiglie e imprese…”</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="https://www.tusciaweb.eu/2024/12/la-nostra-mission-offrire-servizio-migliore-famiglie-imprese/" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+                <article class="news-item">
+                    <h3>Sboccia Unidea Assicurazioni - La Voce di Rovigo</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="https://www.polesine24.it/cronaca/2024/12/14/news/sboccia-unidea-assicurazioni-305591/?id=0" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+                <article class="news-item">
+                    <h3>Modica. Occupiamoci di…ripartono le Assemblee ed è boom di partecipanti</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="https://www.radiortm.it/2024/12/05/modica-occupiamoci-diripartono-le-assemblee-ed-e-boom-di-partecipanti/" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+                <article class="news-item">
+                    <h3>Unidea Assicurazioni, un Open day per chi cerca una carriera di successo</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="https://aostasera.it/notizie/pubbliredazionali/unidea-assicurazioni-un-open-day-per-chi-cerca-una-carriera-di-successo/" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+            </div>
+        
+            <div class="reviews-section">
+                <h3 class="reviews-header">Recensioni dei Clienti</h3>
+                <div class="review-grid">
+            
+                    <article class="review-item">
+                        <div class="review-rating">4/5</div>
+                        <div class="review-source">Google Reviews</div>
+                        <h4>Professionalità e competenza</h4>
+                        <p>Consulenza eccellente per la mia polizza previdenziale. Personale molto preparato.</p>
+                        <div class="news-meta">
+                            <div>Data: 2024-02-18</div>
+                        </div>
+                    </article>
+                
+                </div>
+            </div>
+            
+            <button class="show-more" onclick="toggleArchivedNews('unidea_assicurazioni')">
+                Mostra altri articoli
+            </button>
+            <div id="archived-unidea_assicurazioni" class="news-grid" style="display: none;">
+            
+                    <article class="news-item">
+                        <h3>ShopToday: ingresso (con sconto) al Vittoriale degli Italiani</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.00</div>
+                        </div>
+                        <a href="https://www.bresciatoday.it/social/vittoriale-orari-biglietti-sconto.html" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+                    <article class="news-item">
+                        <h3>Taglio del nastro a Unidea Assicurazioni. Punto di convergenza di venti compagnie</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.00</div>
+                        </div>
+                        <a href="https://www.lanazione.it/lucca/cronaca/taglio-del-nastro-a-unidea-assicurazioni-punto-di-convergenza-di-venti-compagnie-68a0741b" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+                    <article class="news-item">
+                        <h3>Con Unidea Assicurazioni e Broker servizi e prodotti su misura per il cliente</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.00</div>
+                        </div>
+                        <a href="https://aostasera.it/notizie/pubbliredazionali/con-unidea-assicurazioni-e-broker-servizi-e-prodotti-su-misura-per-il-cliente/" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+                    <article class="news-item">
+                        <h3>Mazzali "Gardone Riviera nuovo cuore del motorismo internazionale"</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.00</div>
+                        </div>
+                        <a href="https://notizie.tiscali.it/regioni/lombardia/articoli/mazzali-gardone-riviera-nuovo-cuore-motorismo-internazionale/" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+                    <article class="news-item">
+                        <h3>L’agenzia Unidea cerca agente assicurativo: ecco come candidarsi</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.00</div>
+                        </div>
+                        <a href="https://www.luccaindiretta.it/dal-territorio/lagenzia-unidea-cerca-agente-assicurativo-ecco-come-candidarsi/" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+            </div>
+            
+        </section>
+        
+        <section class="company-section">
+            <div class="company-header">
+                <h2 class="company-name">Vita Nuova</h2>
+                <span class="article-count">10 articoli</span>
+            </div>
+            
+            <div class="wordcloud-container">
+                <img src="wordcloud_Vita_Nuova.png" alt="Word Cloud">
+            </div>
+            
+            <div class="news-grid">
+        
+                <article class="news-item">
+                    <h3>don Fabio Rosini – Commento al Vangelo di domenica 23 Febbraio 2025</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="https://www.cercoiltuovolto.it/don-fabio-rosini-commento-al-vangelo-di-domenica-23-febbraio-2025/" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+                <article class="news-item">
+                    <h3>A San Casciano nuova vita per la fontana storica del Piazzone</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="https://www.gonews.it/2025/02/19/a-san-casciano-nuova-vita-per-la-fontana-storica-del-piazzone/" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+                <article class="news-item">
+                    <h3>Rita Bonaccorso, la nuova vita dell’ex moglie di Totò Schillaci lontano da Palermo</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="https://www.perizona.it/rita-bonaccorso-ex-moglie-schillaci-tradimenti/" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+                <article class="news-item">
+                    <h3>Nuova vita per il Giudizio Universale</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="https://www.ilrestodelcarlino.it/rimini/cronaca/nuova-vita-per-il-giudizio-6711a9e3" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+                <article class="news-item">
+                    <h3>Una nuova vita per le edicole di Cagliari: innovazione e futuro</h3>
+                    <p></p>
+                    <div class="news-meta">
+                        <div>Fonte: Google News</div>
+                        <div>Data: nan</div>
+                        <div>Sentiment: 0.00</div>
+                    </div>
+                    <a href="https://radiolina.it/podcast/edicole-di-cagliari-innovazione-e-futuro/" class="read-more" target="_blank">Leggi di più →</a>
+                </article>
+            
+            </div>
+        
+            <div class="reviews-section">
+                <h3 class="reviews-header">Recensioni dei Clienti</h3>
+                <div class="review-grid">
+            
+                    <article class="review-item">
+                        <div class="review-rating">4.5/5</div>
+                        <div class="review-source">Google Reviews</div>
+                        <h4>Ottima esperienza con la previdenza</h4>
+                        <p>Ho sottoscritto una polizza previdenziale con Vita Nuova. Servizio professionale e consulenti preparati.</p>
+                        <div class="news-meta">
+                            <div>Data: 2024-02-20</div>
+                        </div>
+                    </article>
+                
+                    <article class="review-item">
+                        <div class="review-rating">5/5</div>
+                        <div class="review-source">Trustpilot</div>
+                        <h4>Servizio clienti eccellente</h4>
+                        <p>Ottima assistenza per la mia polizza di protezione. Risposte rapide e chiare.</p>
+                        <div class="news-meta">
+                            <div>Data: 2024-02-15</div>
+                        </div>
+                    </article>
+                
+                </div>
+            </div>
+            
+            <button class="show-more" onclick="toggleArchivedNews('vita_nuova')">
+                Mostra altri articoli
+            </button>
+            <div id="archived-vita_nuova" class="news-grid" style="display: none;">
+            
+                    <article class="news-item">
+                        <h3>New York Encounter. L’inizio di una vita nuova</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.14</div>
+                        </div>
+                        <a href="https://www.clonline.org/it/attualita/articoli/new-york-encounter-inizio-vita-nuova" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+                    <article class="news-item">
+                        <h3>Kvara al PSG: supercar da sogno per l’ex re di Napoli</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.00</div>
+                        </div>
+                        <a href="https://www.virgilio.it/motori/curiosita/auto-kvaratskhelia-porsche-panamera-gts/268230/" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+                    <article class="news-item">
+                        <h3>Una nuova vita per la Funicolare del Monte Brè</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.00</div>
+                        </div>
+                        <a href="https://www.laregione.ch/cantone/luganese/1815636/una-nuova-vita-per-la-funicolare-del-monte-bre" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+                    <article class="news-item">
+                        <h3>Fedez a Domenica In | Sanremo segna una nuova vita per me</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.00</div>
+                        </div>
+                        <a href="https://www.zazoom.it/2025-02-17/fedez-a-domenica-in-sanremo-segna-una-nuova-vita-per-me/16395886/" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+                    <article class="news-item">
+                        <h3>Fedez, ritrovarsi a Sanremo: “Un nuovo inizio nella musica, una nuova vita. Questo è il regalo più grande”</h3>
+                        <p></p>
+                        <div class="news-meta">
+                            <div>Fonte: Google News</div>
+                            <div>Data: nan</div>
+                            <div>Sentiment: 0.00</div>
+                        </div>
+                        <a href="https://www.ilgiorno.it/magazine/fedez-domenica-in-mr3bay6c" class="read-more" target="_blank">Leggi di più →</a>
+                    </article>
+                
+            </div>
+            
+        </section>
+        
+        <section class="analysis-section">
+            <h2>Analisi dei Topic</h2>
+            <div class="venn-container">
+                <img src="venn_diagram.png" alt="Venn Diagram">
+            </div>
+        </section>
+        
+        <script>
+            function toggleArchivedNews(companyId) {
+                const archived = document.getElementById('archived-' + companyId);
+                const button = event.target;
+                
+                if (archived.style.display === 'none') {
+                    archived.style.display = 'grid';
+                    button.textContent = 'Mostra meno';
+                } else {
+                    archived.style.display = 'none';
+                    button.textContent = 'Mostra altri articoli';
+                }
+            }
+        </script>
+    </body>
+    </html>
+    
