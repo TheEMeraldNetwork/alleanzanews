@@ -24,7 +24,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 60px;
+            height: 50px;
         }
 
         .top-banner-content {
@@ -35,7 +35,7 @@
         }
 
         .top-banner-title {
-            font-size: 1.4em;
+            font-size: 1.2em;
             font-weight: 300;
             letter-spacing: 0.05em;
         }
@@ -87,7 +87,7 @@
         /* Navigation Menu */
         .nav-menu {
             background: #fff;
-            padding: 20px 40px;
+            padding: 10px 40px;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -97,13 +97,30 @@
         .nav-menu ul {
             list-style: none;
             display: flex;
-            gap: 30px;
+            flex-direction: column;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu .companies {
+            width: 100%;
+            display: flex;
+            gap: 40px;
+            margin-bottom: 5px;
+        }
+
+        .nav-menu .analysis {
+            width: 100%;
+            border-top: 1px solid #eee;
+            padding-top: 5px;
         }
 
         .nav-menu li {
             cursor: pointer;
-            padding: 10px 0;
+            padding: 8px 0;
             position: relative;
+            font-size: 0.95em;
         }
 
         .nav-menu li:after {
@@ -228,7 +245,7 @@
         
         /* Topic Analysis */
         .topic-lists { 
-            margin: 40px 0; 
+            margin: 30px 0; 
             padding: 30px; 
             background: #ffffff; 
             border-radius: 8px;
@@ -265,19 +282,19 @@
         }
         
         .venn-section {
-            margin: 60px 0;
+            margin: 30px 0;
             text-align: center;
         }
         
         .venn-section h2 {
-            font-size: 1.8em;
+            font-size: 2em;
             color: #333;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             font-weight: 300;
         }
         
         .venn-diagram {
-            margin: 30px 0;
+            margin: 20px 0;
         }
         
         .venn-diagram img {
@@ -285,7 +302,7 @@
             max-width: 600px;
             height: auto;
             margin: 0 auto;
-            filter: grayscale(100%);
+            filter: contrast(1.2) grayscale(100%);
             display: block;
         }
         
@@ -321,6 +338,23 @@
             .review-platforms { grid-template-columns: 1fr; }
             .topic-grid { grid-template-columns: 1fr; }
             .logo { width: 100px; }
+            .top-banner {
+                padding: 10px 20px;
+                height: 40px;
+            }
+            .top-banner-title {
+                font-size: 1.1em;
+            }
+            .nav-menu {
+                padding: 8px 20px;
+            }
+            .nav-menu .companies {
+                gap: 20px;
+            }
+            .nav-menu li {
+                font-size: 0.9em;
+                padding: 6px 0;
+            }
         }
         
         @media (max-width: 480px) {
@@ -395,7 +429,7 @@
     <!-- Top Banner -->
     <div class="top-banner">
         <div class="top-banner-content">
-            <div class="top-banner-title">Interstellar - Company Radar</div>
+            <div class="top-banner-title">Interstellar</div>
             <img src="emerald_logo.png" alt="Emerald Logo" class="top-banner-logo">
         </div>
     </div>
@@ -410,10 +444,14 @@
     <!-- Navigation Menu -->
     <nav class="nav-menu">
         <ul>
-            <li onclick="showSection('alleanza')">Alleanza Assicurazioni</li>
-            <li onclick="showSection('unidea')">Unidea Assicurazioni</li>
-            <li onclick="showSection('vita')">Vita Nuova</li>
-            <li onclick="showSection('cross-analysis')">Cross-Analysis</li>
+            <div class="companies">
+                <li onclick="showSection('alleanza')">Alleanza</li>
+                <li onclick="showSection('unidea')">Unidea</li>
+                <li onclick="showSection('vita')">Vita Nuova</li>
+            </div>
+            <div class="analysis">
+                <li onclick="showSection('cross-analysis')">Cross-Analysis</li>
+            </div>
         </ul>
     </nav>
 
@@ -695,8 +733,6 @@
             </div>
         </div>
         <div class="company-section" data-company="cross-analysis">
-            <h2>Cross-Analysis</h2>
-            
             <!-- Construction Banner -->
             <div style="
                 text-align: center;
@@ -714,7 +750,7 @@
             <div class="topic-lists">
                 <h3>Topics Overlap - Venn Diagrams (work in progress)</h3>
                 <div class="venn-diagram">
-                    <img src="venn_diagram.png" alt="Topic Analysis Venn Diagram" style="max-width: 600px; margin: 30px 0;">
+                    <img src="venn_diagram.png" alt="Topic Analysis Venn Diagram" style="max-width: 600px; margin: 20px 0;">
                 </div>
             </div>
 
