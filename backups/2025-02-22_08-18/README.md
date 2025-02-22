@@ -1,7 +1,7 @@
 # Company News Analysis Tool
 
 ## Overview
-This tool performs automated news analysis for multiple insurance companies by fetching news from both Google News and NewsAPI. It generates a comprehensive, interactive HTML report with sentiment analysis, word clouds, topic overlap visualization, and an integrated AI chatbot assistant.
+This tool performs automated news analysis for multiple insurance companies by fetching news from both Google News and NewsAPI. It generates a comprehensive, interactive HTML report with sentiment analysis, word clouds, and topic overlap visualization.
 
 ## Features
 
@@ -58,27 +58,6 @@ This tool performs automated news analysis for multiple insurance companies by f
   - Direct links to source articles
   - Clear section separation
 
-### AI-Powered Chatbot Assistant
-- **Emerald Assistant Integration**
-  - Real-time query processing
-  - Context-aware responses
-  - Source attribution for all information
-  - Natural language interaction
-
-- **Knowledge Base**
-  - Access to all dashboard articles
-  - Integration with review data
-  - Company-specific information retrieval
-  - Accurate source citations
-
-- **User Interface**
-  - Floating chat button
-  - Clean chat window design
-  - Message history
-  - Loading indicators
-  - Error handling
-  - Mobile responsive
-
 ### Company-Specific Features
 - **Alleanza Assicurazioni**
   - Ultra-strict filtering to exclude non-insurance "alleanza" mentions
@@ -96,6 +75,29 @@ This tool performs automated news analysis for multiple insurance companies by f
   - Insurance context validation
   - Strict filtering of "nuova vita" mentions
 
+## Known Limitations and Pending Improvements
+
+### Current Issues
+1. **Review Sources**
+   - Google Maps links need replacement with proper review search
+   - Review source consolidation needed
+
+2. **URL Validation**
+   - Some news article URLs may be invalid
+   - URL correction system being implemented
+   - Enhanced validation in progress
+
+### Planned Fixes
+1. **Review System Enhancement**
+   - Implementing direct Google search for reviews
+   - Focusing on Trustpilot as primary review source
+   - Improving review link validation
+
+2. **URL System Improvement**
+   - Adding URL correction mechanisms
+   - Enhancing validation logic
+   - Implementing URL testing before inclusion
+
 ## Installation
 
 1. Clone the repository:
@@ -109,27 +111,9 @@ cd [repository-name]
 pip install -r requirements.txt
 ```
 
-3. Create a `.env` file with your API keys:
+3. Create a `.env` file with your NewsAPI key:
 ```
-NEWS_API_KEY=your_news_api_key_here
-ANTHROPIC_API_KEY=your_anthropic_key_here
-```
-
-## Usage
-
-### Running the Dashboard
-```bash
-python company_news_analysis.py
-```
-
-### Starting the Chatbot Server
-```bash
-python app.py
-```
-
-Then open your browser and navigate to:
-```
-http://localhost:5000
+NEWS_API_KEY=your_api_key_here
 ```
 
 ## Configuration
@@ -146,57 +130,55 @@ http://localhost:5000
 - Review sources setup
 - Rate limiting settings
 
+## Usage
+
+Run the main analysis:
+```bash
+python company_news_analysis.py
+```
+
+The script will:
+1. Fetch news from multiple sources
+2. Process and analyze articles
+3. Generate visualizations
+4. Create an interactive HTML report
+
+## Output Files
+
+- `sentiment_report.html`: Main interactive report
+- `wordcloud_*.png`: Word cloud visualizations
+- `venn_diagram.png`: Topic overlap analysis
+- Additional analysis files in backup directories
+
 ## Dependencies
 See `requirements.txt` for the complete list of dependencies.
-
-## Project Structure
-```
-├── app.py                    # Flask server for chatbot
-├── company_news_analysis.py  # Main analysis script
-├── emerald_rag.py           # Chatbot assistant implementation
-├── config.py                # Configuration settings
-├── requirements.txt         # Python dependencies
-├── .env                     # API keys and environment variables
-├── sentiment_report.html    # Generated dashboard
-└── README.md               # Documentation
-```
-
-## Changelog
-
-### Version 1.2.0 (2024-02-22)
-- Added AI-powered Emerald Assistant chatbot
-  - Real-time query processing
-  - Source attribution system
-  - Integration with dashboard data
-  - Modern chat interface
-- Enhanced topic analysis filtering
-- Improved URL validation system
-- Added checkpoint system for backups
-
-### Version 1.1.2 (2024-02-21)
-- Improved topic analysis filtering
-- Enhanced Venn diagram readability
-- Fixed duplicate article handling
-- Added URL validation system
-
-### Version 1.1.1 (2024-02-20)
-- Enhanced review section
-- Improved URL validation
-- Added backup system
-
-### Version 1.1.0 (2024-02-19)
-- Added Vita Nuova section
-- Enhanced topic analysis
-- Improved HTML report styling
-
-### Version 1.0.0 (2024-02-18)
-- Initial release
-- Basic news aggregation
-- Sentiment analysis
-- Word cloud visualization
 
 ## Contributing
 Contributions are welcome! Please read our contributing guidelines and submit pull requests for any improvements.
 
 ## License
-[Specify License] 
+[Specify License]
+
+## Changelog
+
+### Version 1.1.1 (In Progress)
+- Removing Google Maps review links
+- Implementing proper Google review search
+- Enhancing URL validation system
+- Improving review source handling
+- Adding URL correction mechanisms
+
+### Version 1.1.0 (2024-02-21)
+- Added Vita Nuova section with domain-specific search
+- Enhanced topic analysis with detailed breakdowns
+- Improved review section with preview and links
+- Added backup system with timestamps
+- Updated filtering logic for all companies
+- Enhanced HTML report styling and organization
+
+### Version 1.0.0 (2024-02-20)
+- Initial release
+- Basic news aggregation
+- Sentiment analysis
+- Word cloud visualization
+- Interactive HTML report 

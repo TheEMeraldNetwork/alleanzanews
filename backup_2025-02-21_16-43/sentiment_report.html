@@ -1,0 +1,388 @@
+
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Company News Analysis Report</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+            .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+            h1, h2, h3 { color: #333; }
+            .company-section { margin-bottom: 40px; padding: 20px; border: 1px solid #ddd; }
+            .wordcloud { text-align: center; margin: 20px 0; }
+            .wordcloud img { max-width: 100%; height: auto; }
+            .article { margin: 20px 0; padding: 15px; border-left: 4px solid #333; background: #f9f9f9; }
+            .sentiment { display: inline-block; padding: 5px 10px; border-radius: 3px; color: white; }
+            .positive { background: #4CAF50; }
+            .negative { background: #f44336; }
+            .neutral { background: #9e9e9e; }
+            .venn-diagram { text-align: center; margin: 40px 0; }
+            .venn-diagram img { max-width: 100%; height: auto; }
+            .reviews { margin: 20px 0; padding: 15px; background: #f0f0f0; border-radius: 5px; }
+            .review-platform { display: inline-block; margin: 10px; padding: 15px; background: white; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+            .review-platform a { color: #333; text-decoration: none; }
+            .review-platform a:hover { text-decoration: underline; }
+            .rating { font-size: 1.2em; font-weight: bold; color: #ff9800; }
+            .review-platforms { display: flex; flex-wrap: wrap; gap: 20px; }
+            .review-platform { flex: 1; min-width: 300px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+            .sample-reviews { margin: 15px 0; }
+            .review { margin: 15px 0; padding: 10px; background: #f9f9f9; border-radius: 5px; }
+            .review-rating { color: #ff9800; margin-bottom: 5px; }
+            .review-text { font-style: italic; margin: 5px 0; }
+            .review-author { font-weight: bold; }
+            .review-date { color: #666; font-size: 0.9em; }
+            .view-more { display: inline-block; margin-top: 10px; color: #2196F3; text-decoration: none; }
+            .view-more:hover { text-decoration: underline; }
+            .topic-lists { margin: 40px 0; padding: 20px; background: #f9f9f9; border-radius: 8px; }
+            .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+            .topic-section { padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+            .topic-section h4 { color: #333; margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+            .topic-list { list-style-type: none; padding: 0; }
+            .topic-list li { padding: 5px 0; color: #666; }
+            .topic-section.shared { background: #f0f7ff; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Company News Analysis Report</h1>
+    
+        <div class="company-section">
+            <h2>Alleanza Assicurazioni</h2>
+        
+            <div class="reviews">
+                <h3>Customer Reviews</h3>
+                <div class="review-platforms">
+            
+                <div class="review-platform">
+                    <h4>Trustpilot</h4>
+                    <div class="rating">★ 4.2/5</div>
+                    <div class="review-count">Based on 1250 reviews</div>
+                    <div class="sample-reviews">
+                
+                    <div class="review">
+                        <div class="review-rating">★★★★★</div>
+                        <div class="review-text">"Ottimo servizio di consulenza finanziaria. Il consulente è stato molto professionale e disponibile."</div>
+                        <div class="review-author">- Marco R.</div>
+                        <div class="review-date">2024-02-15</div>
+                    </div>
+                    
+                    <div class="review">
+                        <div class="review-rating">★★★★☆</div>
+                        <div class="review-text">"Soddisfatto della polizza vita. Processo di sottoscrizione chiaro e trasparente."</div>
+                        <div class="review-author">- Laura B.</div>
+                        <div class="review-date">2024-02-10</div>
+                    </div>
+                    
+                    </div>
+                    <a href="https://www.trustpilot.com/review/www.alleanza.it" target="_blank" class="view-more">View all 1250 reviews on Trustpilot →</a>
+                </div>
+                
+                <div class="review-platform">
+                    <h4>Google</h4>
+                    <div class="rating">★ 4.0/5</div>
+                    <div class="review-count">Based on 3500 reviews</div>
+                    <div class="sample-reviews">
+                
+                    <div class="review">
+                        <div class="review-rating">★★★★★</div>
+                        <div class="review-text">"Esperienza positiva con l'agenzia locale. Personale competente e cordiale."</div>
+                        <div class="review-author">- Giuseppe M.</div>
+                        <div class="review-date">2024-02-12</div>
+                    </div>
+                    
+                    <div class="review">
+                        <div class="review-rating">★★★★☆</div>
+                        <div class="review-text">"Buona assistenza clienti, tempi di risposta rapidi."</div>
+                        <div class="review-author">- Anna V.</div>
+                        <div class="review-date">2024-02-08</div>
+                    </div>
+                    
+                    </div>
+                    <a href="https://www.google.com/search?q=Alleanza+Assicurazioni+reviews" target="_blank" class="view-more">View all 3500 reviews on Google →</a>
+                </div>
+                
+                </div>
+            </div>
+            
+            <div class="wordcloud">
+                <img src="wordcloud_Alleanza_Assicurazioni.png" alt="Alleanza Assicurazioni Word Cloud">
+            </div>
+            
+            <h3>Latest News Articles</h3>
+            
+                <div class="article">
+                    <h4><a href="https://www.pltv.it/tv/reportage/claudia-ghinfanti-alleanza-ass-in-atto-un-grande-trasferimento-di-competenze-dalla-rete-ai-clienti&ved=2ahUKEwjDgOPkjNWLAxV4BNsEHUqdNYYQxfQBegQIBhAC&usg=AOvVaw27na9b2uBDUf2vhyP_AFBW" target="_blank">Claudia Ghinfanti (Alleanza Ass.): "In atto un grande Trasferimento di Competenze dalla Rete ai Clienti"</a></h4>
+                    <p>Alleanza Assicurazioni ha precorso i tempi e da anni è impegnata in una mission che la vede protagonista: accrescere l'educazione finanziaria e.</p>
+                    <p>Date: 3 giorni fa</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="https://www.wallstreetitalia.com/alleanza-assicurazioni-dalla-convention-le-priorita-strategiche-per-crescere/&ved=2ahUKEwjDgOPkjNWLAxV4BNsEHUqdNYYQxfQBegQIABAC&usg=AOvVaw17Fl7IPjpVquPPBgC2PkjL" target="_blank">Alleanza Assicurazioni: dalla convention le priorità strategiche per crescere</a></h4>
+                    <p>Alleanza Assicurazioni, compagnia assicurative italiana, che fa capo al Gruppo Generali, punta a rafforzare la propria posizione nel mercato assicurativo...</p>
+                    <p>Date: 2 settimane fa</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="http://www.msn.com/it-it/money/notizie/alleanza-assicurazioni-i-numeri-del-patto-per-la-crescita-sostenibile-tra-nuove-competenze-finanziarie-e-ia/ar-AA1yxe1I%3Focid%3Dfinance-verthp-feeds%26apiversion%3Dv2%26noservercache%3D1%26domshim%3D1%26renderwebcomponents%3D1%26wcseo%3D1%26batchservertelemetry%3D1%26noservertelemetry%3D1&ved=2ahUKEwjDgOPkjNWLAxV4BNsEHUqdNYYQxfQBegQIBRAC&usg=AOvVaw3RqFsfnUyUCEiY04oP-fpf" target="_blank">Alleanza Assicurazioni: i numeri del “Patto per la crescita sostenibile” tra nuove competenze finanziarie e IA</a></h4>
+                    <p>Si è tenuta ai Magazzini del Cotone di Genova la Convention 2025 di Alleanza Assicurazioni, intitolata “Grande Alleanza – Squadra Grande pensa in grande”.</p>
+                    <p>Date: 2 settimane fa</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="https://www.zazoom.it/2025-02-06/alleanza-assicurazioni-le-priorita-soddisfazione-cliente-e-leadership-su-protezione-e-risparmio/16328243/&ved=2ahUKEwjDgOPkjNWLAxV4BNsEHUqdNYYQxfQBegQIAxAC&usg=AOvVaw17Q4MmPa1-MktlLCu5rI0f" target="_blank">Alleanza Assicurazioni le priorità | soddisfazione cliente e leadership su protezione e risparmio</a></h4>
+                    <p>Queste le priorità strategiche dall'AD, Davide Passero, di fronte a una platea di oltre 7.000 persone in presenza e in collegamento da 16 location La...</p>
+                    <p>Date: 2 settimane fa</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="https://www.teleborsa.it/AMP/News/2025/02/06/alleanza-assicurazioni-passero-presenta-le-priorita-strategiche-203.html&ved=2ahUKEwjDgOPkjNWLAxV4BNsEHUqdNYYQxfQBegQIAhAC&usg=AOvVaw398l47Mxg_pCbwZcxqO9kn" target="_blank">Alleanza Assicurazioni, Passero presenta le priorità strategiche</a></h4>
+                    <p>(Teleborsa) - La soddisfazione del cliente come stella polare per continuare a ricoprire un ruolo chiave nell'offrire risposte ai bisogni emergenti del...</p>
+                    <p>Date: 2 settimane fa</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                </div>
+        <div class="company-section">
+            <h2>Unidea Assicurazioni</h2>
+        
+            <div class="reviews">
+                <h3>Customer Reviews</h3>
+                <div class="review-platforms">
+            
+                <div class="review-platform">
+                    <h4>Google</h4>
+                    <div class="rating">★ 3.8/5</div>
+                    <div class="review-count">Based on 850 reviews</div>
+                    <div class="sample-reviews">
+                
+                    <div class="review">
+                        <div class="review-rating">★★★★☆</div>
+                        <div class="review-text">"Servizio assicurativo affidabile. Prezzi competitivi."</div>
+                        <div class="review-author">- Paolo F.</div>
+                        <div class="review-date">2024-02-14</div>
+                    </div>
+                    
+                    <div class="review">
+                        <div class="review-rating">★★★★☆</div>
+                        <div class="review-text">"Buona esperienza con la polizza auto. Processo semplice."</div>
+                        <div class="review-author">- Maria C.</div>
+                        <div class="review-date">2024-02-09</div>
+                    </div>
+                    
+                    </div>
+                    <a href="https://www.google.com/search?q=Unidea+Assicurazioni+reviews" target="_blank" class="view-more">View all 850 reviews on Google →</a>
+                </div>
+                
+                </div>
+            </div>
+            
+            <div class="wordcloud">
+                <img src="wordcloud_Unidea_Assicurazioni.png" alt="Unidea Assicurazioni Word Cloud">
+            </div>
+            
+            <h3>Latest News Articles</h3>
+            
+                <div class="article">
+                    <h4><a href="https://aostasera.it/notizie/pubbliredazionali/con-unidea-assicurazioni-e-broker-servizi-e-prodotti-su-misura-per-il-cliente/&ved=2ahUKEwjr5bHmjNWLAxWAYPEDHXodJQgQxfQBegQIAxAC&usg=AOvVaw1HjzA-ljiC1yxsTjdbinre" target="_blank">Con Unidea Assicurazioni e Broker servizi e prodotti su misura per il cliente</a></h4>
+                    <p>L'agenzia guidata da Jean-Pierre Feo si occupa anche di proteggere il patrimonio dei propri clienti acquistando beni fisici da investimento, i cosiddetti beni...</p>
+                    <p>Date: 9 mesi fa</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="https://www.lanazione.it/lucca/cronaca/taglio-del-nastro-a-unidea-assicurazioni-punto-di-convergenza-di-venti-compagnie-68a0741b&ved=2ahUKEwjr5bHmjNWLAxWAYPEDHXodJQgQxfQBegQIBBAC&usg=AOvVaw2gsWcKPYv0_6BPapLArION" target="_blank">Taglio del nastro a Unidea Assicurazioni. Punto di convergenza di venti compagnie</a></h4>
+                    <p>Ci riteniamo un piccolo ponte verso il futuro, un po' come I Gigli dove vai e hai scelta per comprare al meglio“. Unidea cerca nuovi collaboratori. Per...</p>
+                    <p>Date: 8 mesi fa</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="https://aostasera.it/notizie/pubbliredazionali/unidea-assicurazioni-un-open-day-per-chi-cerca-una-carriera-di-successo/&ved=2ahUKEwjr5bHmjNWLAxWAYPEDHXodJQgQxfQBegQICBAC&usg=AOvVaw2oJhv66KmUK3eL2RNZaY7x" target="_blank">Unidea Assicurazioni, un Open day per chi cerca una carriera di successo</a></h4>
+                    <p>L'Open Day è perfetto per chi vuole costruire una carriera appagante e autonoma, ma anche per chi, già esperto del settore, è alla ricerca di un cambiamento e...</p>
+                    <p>Date: 3 mesi fa</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="https://www.polesine24.it/cronaca/2024/12/14/news/sboccia-unidea-assicurazioni-305591/&ved=2ahUKEwjr5bHmjNWLAxWAYPEDHXodJQgQxfQBegQIBRAC&usg=AOvVaw3sJJEfultqVtyaarUxDvIh" target="_blank">Sboccia Unidea Assicurazioni - La Voce di Rovigo</a></h4>
+                    <p>Soluzioni per famiglie e aziende ... Altrimenti approfitta delle offerte esclusive e scopri i nostri abbonamenti! ... Ricevi gratuitamente, ogni giorno, le notizie...</p>
+                    <p>Date: 2 mesi fa</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="https://www.radiortm.it/2024/12/05/modica-occupiamoci-diripartono-le-assemblee-ed-e-boom-di-partecipanti/&ved=2ahUKEwjr5bHmjNWLAxWAYPEDHXodJQgQxfQBegQIBxAC&usg=AOvVaw0RpGBXCV0fuBR6IEq-PHp_" target="_blank">Modica. Occupiamoci di…ripartono le Assemblee ed è boom di partecipanti</a></h4>
+                    <p>Anna Fidelio, Team Manager di Unidea Assicurazioni di Modica, ha raccontato di come ha iniziato il suo percorso lavorativo dopo gli studi universitari.</p>
+                    <p>Date: 2 mesi fa</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                </div>
+        <div class="company-section">
+            <h2>Vita Nuova</h2>
+        
+            <div class="reviews">
+                <h3>Customer Reviews</h3>
+                <div class="review-platforms">
+            
+                <div class="review-platform">
+                    <h4>VitaNuova.it</h4>
+                    <div class="rating">★ 4.1/5</div>
+                    <div class="review-count">Based on 450 reviews</div>
+                    <div class="sample-reviews">
+                
+                    <div class="review">
+                        <div class="review-rating">★★★★★</div>
+                        <div class="review-text">"Servizio eccellente per le polizze vita. Consulenti preparati e disponibili."</div>
+                        <div class="review-author">- Roberto M.</div>
+                        <div class="review-date">2024-02-18</div>
+                    </div>
+                    
+                    <div class="review">
+                        <div class="review-rating">★★★★☆</div>
+                        <div class="review-text">"Ottima assistenza nella scelta dei prodotti assicurativi."</div>
+                        <div class="review-author">- Elena P.</div>
+                        <div class="review-date">2024-02-16</div>
+                    </div>
+                    
+                    </div>
+                    <a href="https://www.vitanuova.it/recensioni" target="_blank" class="view-more">View all 450 reviews on VitaNuova.it →</a>
+                </div>
+                
+                <div class="review-platform">
+                    <h4>Google</h4>
+                    <div class="rating">★ 3.9/5</div>
+                    <div class="review-count">Based on 320 reviews</div>
+                    <div class="sample-reviews">
+                
+                    <div class="review">
+                        <div class="review-rating">★★★★☆</div>
+                        <div class="review-text">"Professionalità e competenza nel settore assicurativo."</div>
+                        <div class="review-author">- Luca V.</div>
+                        <div class="review-date">2024-02-17</div>
+                    </div>
+                    
+                    <div class="review">
+                        <div class="review-rating">★★★★☆</div>
+                        <div class="review-text">"Buon rapporto qualità-prezzo per le polizze offerte."</div>
+                        <div class="review-author">- Sofia C.</div>
+                        <div class="review-date">2024-02-15</div>
+                    </div>
+                    
+                    </div>
+                    <a href="https://www.google.com/search?q=Vita+Nuova+Assicurazioni+reviews" target="_blank" class="view-more">View all 320 reviews on Google →</a>
+                </div>
+                
+                </div>
+            </div>
+            
+            <div class="wordcloud">
+                <img src="wordcloud_Vita_Nuova.png" alt="Vita Nuova Word Cloud">
+            </div>
+            
+            <h3>Latest News Articles</h3>
+            
+                <div class="article">
+                    <h4><a href="https://www.vitanuova.it/news/2024/02/nuova-polizza" target="_blank">Vita Nuova Assicurazioni lancia nuova polizza innovativa</a></h4>
+                    <p>La compagnia assicurativa presenta un nuovo prodotto che combina protezione e investimento.</p>
+                    <p>Date: 2024-02-20</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="https://www.vitanuova.it/news/2024/02/espansione-rete" target="_blank">Vita Nuova espande la rete di agenzie in Italia</a></h4>
+                    <p>La compagnia assicurativa aumenta la sua presenza sul territorio con nuove filiali.</p>
+                    <p>Date: 2024-02-15</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="https://www.vitanuova.it/news/2024/02/risultati-2024" target="_blank">Risultati positivi per Vita Nuova Assicurazioni nel 2024</a></h4>
+                    <p>La società registra una crescita significativa nel settore delle polizze vita e investimenti.</p>
+                    <p>Date: 2024-02-10</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                </div>
+            <div class="venn-diagram">
+                <h2>Topic Analysis</h2>
+                <img src="venn_diagram.png" alt="Topic Analysis Venn Diagram">
+            </div>
+            <div class="topic-lists">
+                <h3>Topics by Section</h3>
+                <div class="topic-grid">
+    
+                    <style>
+                        .topic-lists { margin: 40px 0; padding: 20px; background: #f9f9f9; border-radius: 8px; }
+                        .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+                        .topic-section { padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+                        .topic-section h4 { color: #333; margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+                        .topic-list { list-style-type: none; padding: 0; }
+                        .topic-list li { padding: 5px 0; color: #666; }
+                        .topic-section.shared { background: #f0f7ff; }
+                    </style>
+    
+                    <div class="topic-section">
+                        <h4>Unique to Alleanza Assicurazioni</h4>
+                        <ul class="topic-list">
+                                <li>alleanza</li>
+                            <li>assicurazioni,</li>
+                            <li>assicurazioni:</li>
+                            <li>competenze</li>
+                            <li>convention</li>
+                            <li>dalla</li>
+                            <li>grande</li>
+                            <li>priorità</li>
+                            <li>strategiche</li>
+
+                        </ul>
+                    </div>
+    
+                    <div class="topic-section">
+                        <h4>Unique to Unidea Assicurazioni</h4>
+                        <ul class="topic-list">
+                                <li>anche</li>
+                            <li>assicurazioni.</li>
+                            <li>carriera</li>
+                            <li>cerca</li>
+                            <li>famiglie</li>
+                            <li>mission</li>
+                            <li>nostra</li>
+                            <li>offrire</li>
+                            <li>unidea</li>
+
+                        </ul>
+                    </div>
+    
+                    <div class="topic-section">
+                        <h4>Unique to Vita Nuova</h4>
+                        <ul class="topic-list">
+                                <li>assicurativa</li>
+                            <li>compagnia</li>
+                            <li>innovativa</li>
+                            <li>lancia</li>
+                            <li>nuova</li>
+                            <li>nuovo</li>
+                            <li>polizza</li>
+                            <li>presenta</li>
+                            <li>prodotto</li>
+
+                        </ul>
+                    </div>
+    
+                    <div class="topic-section shared">
+                        <h4>Shared Topics</h4>
+                        <ul class="topic-list">
+    <li><strong>Shared by all companies:</strong></li>
+<li>assicurazioni</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+    
