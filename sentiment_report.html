@@ -7,7 +7,7 @@
         <title>Company News Analysis Report</title>
         <style>
             body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
-            .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+            .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); position: relative; }
             h1, h2, h3 { color: #333; }
             .company-section { margin-bottom: 40px; padding: 20px; border: 1px solid #ddd; }
             .wordcloud { text-align: center; margin: 20px 0; }
@@ -34,6 +34,7 @@
             .review-date { color: #666; font-size: 0.9em; }
             .view-more { display: inline-block; margin-top: 10px; color: #2196F3; text-decoration: none; }
             .view-more:hover { text-decoration: underline; }
+            .logo { position: absolute; top: 20px; right: 20px; width: 150px; height: auto; }
             .topic-lists { margin: 40px 0; padding: 20px; background: #f9f9f9; border-radius: 8px; }
             .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
             .topic-section { padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
@@ -45,177 +46,222 @@
     </head>
     <body>
         <div class="container">
+            <img src="emerald_logo.png" alt="Emerald Logo" class="logo">
             <h1>Company News Analysis Report</h1>
     
-            <div class="company-section">
-                <h2>Alleanza Assicurazioni</h2>
+        <div class="company-section">
+            <h2>Alleanza Assicurazioni</h2>
+        
+            <div class="reviews">
+                <h3>Customer Reviews</h3>
+                <div class="review-platforms">
             
-                <div class="reviews">
-                    <h3>Customer Reviews</h3>
-                    <div class="review-platforms">
+                <div class="review-platform">
+                    <h4>Trustpilot</h4>
+                    <div class="rating">★ 4.2/5</div>
+                    <div class="review-count">Based on 1250 reviews</div>
+                    <div class="sample-reviews">
                 
-                    <div class="review-platform">
-                        <h4>Trustpilot</h4>
-                        <div class="rating">★ 4.2/5</div>
-                        <div class="review-count">Based on 1250 reviews</div>
-                        <div class="sample-reviews">
-                    
-                        <div class="review">
-                            <div class="review-rating">★★★★★</div>
-                            <div class="review-text">"Ottimo servizio di consulenza finanziaria. Il consulente è stato molto professionale e disponibile."</div>
-                            <div class="review-author">- Marco R.</div>
-                            <div class="review-date">2024-02-15</div>
-                        </div>
-                        
-                        <div class="review">
-                            <div class="review-rating">★★★★☆</div>
-                            <div class="review-text">"Soddisfatto della polizza vita. Processo di sottoscrizione chiaro e trasparente."</div>
-                            <div class="review-author">- Laura B.</div>
-                            <div class="review-date">2024-02-10</div>
-                        </div>
-                        
-                        </div>
-                        <a href="https://www.trustpilot.com/review/www.alleanza.it" target="_blank" class="view-more">View all 1250 reviews on Trustpilot →</a>
+                    <div class="review">
+                        <div class="review-rating">★★★★★</div>
+                        <div class="review-text">"Ottimo servizio di consulenza finanziaria. Il consulente è stato molto professionale e disponibile."</div>
+                        <div class="review-author">- Marco R.</div>
+                        <div class="review-date">2024-02-15</div>
                     </div>
                     
-                    <div class="review-platform">
-                        <h4>Google</h4>
-                        <div class="rating">★ 4.0/5</div>
-                        <div class="review-count">Based on 3500 reviews</div>
-                        <div class="sample-reviews">
-                    
-                        <div class="review">
-                            <div class="review-rating">★★★★★</div>
-                            <div class="review-text">"Esperienza positiva con l'agenzia locale. Personale competente e cordiale."</div>
-                            <div class="review-author">- Giuseppe M.</div>
-                            <div class="review-date">2024-02-12</div>
-                        </div>
-                        
-                        <div class="review">
-                            <div class="review-rating">★★★★☆</div>
-                            <div class="review-text">"Buona assistenza clienti, tempi di risposta rapidi."</div>
-                            <div class="review-author">- Anna V.</div>
-                            <div class="review-date">2024-02-08</div>
-                        </div>
-                        
-                        </div>
-                        <a href="https://www.google.com/search?q=Alleanza+Assicurazioni+reviews" target="_blank" class="view-more">View all 3500 reviews on Google →</a>
+                    <div class="review">
+                        <div class="review-rating">★★★★☆</div>
+                        <div class="review-text">"Soddisfatto della polizza vita. Processo di sottoscrizione chiaro e trasparente."</div>
+                        <div class="review-author">- Laura B.</div>
+                        <div class="review-date">2024-02-10</div>
                     </div>
                     
                     </div>
+                    <a href="https://it.trustpilot.com/review/www.alleanza.it" target="_blank" class="view-more">View all 1250 reviews on Trustpilot →</a>
                 </div>
                 
-                <div class="wordcloud">
-                    <img src="wordcloud_Alleanza_Assicurazioni.png" alt="Alleanza Assicurazioni Word Cloud">
+                <div class="review-platform">
+                    <h4>Google Reviews</h4>
+                    <div class="rating">★ 4.0/5</div>
+                    <div class="review-count">Based on 3500 reviews</div>
+                    <div class="sample-reviews">
+                
+                    <div class="review">
+                        <div class="review-rating">★★★★★</div>
+                        <div class="review-text">"Esperienza positiva con l'agenzia locale. Personale competente e cordiale."</div>
+                        <div class="review-author">- Giuseppe M.</div>
+                        <div class="review-date">2024-02-12</div>
+                    </div>
+                    
+                    <div class="review">
+                        <div class="review-rating">★★★★☆</div>
+                        <div class="review-text">"Buona assistenza clienti, tempi di risposta rapidi."</div>
+                        <div class="review-author">- Anna V.</div>
+                        <div class="review-date">2024-02-08</div>
+                    </div>
+                    
+                    </div>
+                    <a href="https://www.google.com/search?q=Alleanza+Assicurazioni+recensioni" target="_blank" class="view-more">View all 3500 reviews on Google Reviews →</a>
                 </div>
-                <h3>Latest News Articles</h3>
+                
+                </div>
+            </div>
             
-                <div class="article">
-                    <h4><a href="https://www.pltv.it/tv/reportage/claudia-ghinfanti-alleanza-ass-in-atto-un-grande-trasferimento-di-competenze-dalla-rete-ai-clienti&ved=2ahUKEwjdtNf7-tSLAxW8GBAIHTgKFNMQxfQBegQIBhAC&usg=AOvVaw2HEXkKZLd9X9RJN5-WzDDu" target="_blank">Claudia Ghinfanti (Alleanza Ass.): "In atto un grande Trasferimento di Competenze dalla Rete ai Clienti"</a></h4>
-                    <p>Alleanza Assicurazioni ha precorso i tempi e da anni è impegnata in una mission che la vede protagonista: accrescere l'educazione finanziaria e.</p>
-                    <p>Date: 3 giorni fa</p>
-                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
-                </div>
-                
-                <div class="article">
-                    <h4><a href="https://www.wallstreetitalia.com/alleanza-assicurazioni-dalla-convention-le-priorita-strategiche-per-crescere/&ved=2ahUKEwjdtNf7-tSLAxW8GBAIHTgKFNMQxfQBegQIAhAC&usg=AOvVaw29nO3e4Cgpw6Ac0l6HBGlI" target="_blank">Alleanza Assicurazioni: dalla convention le priorità strategiche per crescere</a></h4>
-                    <p>Alleanza Assicurazioni, compagnia assicurative italiana, che fa capo al Gruppo Generali, punta a rafforzare la propria posizione nel mercato assicurativo...</p>
-                    <p>Date: 2 settimane fa</p>
-                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
-                </div>
-                
-                <div class="article">
-                    <h4><a href="http://www.msn.com/it-it/money/notizie/alleanza-assicurazioni-i-numeri-del-patto-per-la-crescita-sostenibile-tra-nuove-competenze-finanziarie-e-ia/ar-AA1yxe1I%3Focid%3Dfinance-verthp-feeds%26apiversion%3Dv2%26noservercache%3D1%26domshim%3D1%26renderwebcomponents%3D1%26wcseo%3D1%26batchservertelemetry%3D1%26noservertelemetry%3D1&ved=2ahUKEwjdtNf7-tSLAxW8GBAIHTgKFNMQxfQBegQIARAC&usg=AOvVaw070MYr-G8evHgtrJ54rMm6" target="_blank">Alleanza Assicurazioni: i numeri del “Patto per la crescita sostenibile” tra nuove competenze finanziarie e IA</a></h4>
-                    <p>Si è tenuta ai Magazzini del Cotone di Genova la Convention 2025 di Alleanza Assicurazioni, intitolata “Grande Alleanza – Squadra Grande pensa in grande”.</p>
-                    <p>Date: 2 settimane fa</p>
-                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
-                </div>
-                
-                <div class="article">
-                    <h4><a href="https://www.zazoom.it/2025-02-06/alleanza-assicurazioni-le-priorita-soddisfazione-cliente-e-leadership-su-protezione-e-risparmio/16328243/&ved=2ahUKEwjdtNf7-tSLAxW8GBAIHTgKFNMQxfQBegQIBRAC&usg=AOvVaw2_ABd8fNuKdJORaFqx746L" target="_blank">Alleanza Assicurazioni le priorità | soddisfazione cliente e leadership su protezione e risparmio</a></h4>
-                    <p>Queste le priorità strategiche dall'AD, Davide Passero, di fronte a una platea di oltre 7.000 persone in presenza e in collegamento da 16 location La...</p>
-                    <p>Date: 2 settimane fa</p>
-                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
-                </div>
-                
-                <div class="article">
-                    <h4><a href="https://www.teleborsa.it/AMP/News/2025/02/06/alleanza-assicurazioni-passero-presenta-le-priorita-strategiche-203.html&ved=2ahUKEwjdtNf7-tSLAxW8GBAIHTgKFNMQxfQBegQIABAC&usg=AOvVaw3n_i_flqUYWXIk8DsEchSc" target="_blank">Alleanza Assicurazioni, Passero presenta le priorità strategiche</a></h4>
-                    <p>(Teleborsa) - La soddisfazione del cliente come stella polare per continuare a ricoprire un ruolo chiave nell'offrire risposte ai bisogni emergenti del...</p>
-                    <p>Date: 2 settimane fa</p>
-                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
-                </div>
-                </div>
-            <div class="company-section">
-                <h2>Unidea Assicurazioni</h2>
+            <div class="wordcloud">
+                <img src="wordcloud_Alleanza_Assicurazioni.png" alt="Alleanza Assicurazioni Word Cloud">
+            </div>
             
-                <div class="reviews">
-                    <h3>Customer Reviews</h3>
-                    <div class="review-platforms">
-                
-                    <div class="review-platform">
-                        <h4>Google</h4>
-                        <div class="rating">★ 3.8/5</div>
-                        <div class="review-count">Based on 850 reviews</div>
-                        <div class="sample-reviews">
-                    
-                        <div class="review">
-                            <div class="review-rating">★★★★☆</div>
-                            <div class="review-text">"Servizio assicurativo affidabile. Prezzi competitivi."</div>
-                            <div class="review-author">- Paolo F.</div>
-                            <div class="review-date">2024-02-14</div>
-                        </div>
-                        
-                        <div class="review">
-                            <div class="review-rating">★★★★☆</div>
-                            <div class="review-text">"Buona esperienza con la polizza auto. Processo semplice."</div>
-                            <div class="review-author">- Maria C.</div>
-                            <div class="review-date">2024-02-09</div>
-                        </div>
-                        
-                        </div>
-                        <a href="https://www.google.com/search?q=Unidea+Assicurazioni+reviews" target="_blank" class="view-more">View all 850 reviews on Google →</a>
-                    </div>
-                    
-                    </div>
-                </div>
-                
-                <div class="wordcloud">
-                    <img src="wordcloud_Unidea_Assicurazioni.png" alt="Unidea Assicurazioni Word Cloud">
-                </div>
-                <h3>Latest News Articles</h3>
+            <h3>Latest News Articles</h3>
             
                 <div class="article">
-                    <h4><a href="https://aostasera.it/notizie/pubbliredazionali/con-unidea-assicurazioni-e-broker-servizi-e-prodotti-su-misura-per-il-cliente/&ved=2ahUKEwjyseD9-tSLAxWnGxAIHef9H1kQxfQBegQIBxAC&usg=AOvVaw3EMshXdMUsmEFVmcdXisUK" target="_blank">Con Unidea Assicurazioni e Broker servizi e prodotti su misura per il cliente</a></h4>
-                    <p>L'agenzia guidata da Jean-Pierre Feo si occupa anche di proteggere il patrimonio dei propri clienti acquistando beni fisici da investimento, i cosiddetti beni...</p>
-                    <p>Date: 9 mesi fa</p>
+                    <h4><a href="https://www.pltv.it/tv/reportage/claudia-ghinfanti-alleanza-ass-in-atto-un-grande-trasferimento-di-competenze-dalla-rete-ai-clienti" target="_blank">Claudia Ghinfanti (Alleanza Ass.): "In atto un grande Trasferimento di Competenze dalla Rete ai Clienti"</a></h4>
+                    <p>Source: www.pltv.it</p>
                     <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
                 </div>
                 
                 <div class="article">
-                    <h4><a href="https://www.lanazione.it/lucca/cronaca/taglio-del-nastro-a-unidea-assicurazioni-punto-di-convergenza-di-venti-compagnie-68a0741b&ved=2ahUKEwjyseD9-tSLAxWnGxAIHef9H1kQxfQBegQIBBAC&usg=AOvVaw2JI-95QDOETMr_igtm39NR" target="_blank">Taglio del nastro a Unidea Assicurazioni. Punto di convergenza di venti compagnie</a></h4>
-                    <p>Ci riteniamo un piccolo ponte verso il futuro, un po' come I Gigli dove vai e hai scelta per comprare al meglio“. Unidea cerca nuovi collaboratori. Per...</p>
-                    <p>Date: 8 mesi fa</p>
+                    <h4><a href="https://www.wallstreetitalia.com/alleanza-assicurazioni-dalla-convention-le-priorita-strategiche-per-crescere/" target="_blank">Alleanza Assicurazioni: dalla convention le prioritA  strategiche per crescere</a></h4>
+                    <p>Source: www.wallstreetitalia.com</p>
                     <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
                 </div>
                 
                 <div class="article">
-                    <h4><a href="https://aostasera.it/notizie/pubbliredazionali/unidea-assicurazioni-un-open-day-per-chi-cerca-una-carriera-di-successo/&ved=2ahUKEwjyseD9-tSLAxWnGxAIHef9H1kQxfQBegQICBAC&usg=AOvVaw2N7JKpjU-WFI9Ps7gQ1Id3" target="_blank">Unidea Assicurazioni, un Open day per chi cerca una carriera di successo</a></h4>
-                    <p>L'Open Day è perfetto per chi vuole costruire una carriera appagante e autonoma, ma anche per chi, già esperto del settore, è alla ricerca di un cambiamento e...</p>
-                    <p>Date: 3 mesi fa</p>
+                    <h4><a href="https://www.msn.com/it-it/money/notizie/alleanza-assicurazioni-i-numeri-del-patto-per-la-crescita-sostenibile-tra-nuove-competenze-finanziarie-e-ia/ar-AA1yxe1I" target="_blank">Alleanza Assicurazioni: i numeri del aPatto per la crescita sostenibilea tra nuove competenze finanziarie e IA</a></h4>
+                    <p>Source: www.msn.com</p>
                     <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
                 </div>
                 
                 <div class="article">
-                    <h4><a href="https://www.polesine24.it/cronaca/2024/12/14/news/sboccia-unidea-assicurazioni-305591/&ved=2ahUKEwjyseD9-tSLAxWnGxAIHef9H1kQxfQBegQIAhAC&usg=AOvVaw0mJktqUb4U-8s7V5Sk_YXY" target="_blank">Sboccia Unidea Assicurazioni - La Voce di Rovigo</a></h4>
-                    <p>Soluzioni per famiglie e aziende ... Altrimenti approfitta delle offerte esclusive e scopri i nostri abbonamenti! ... Ricevi gratuitamente, ogni giorno, le notizie...</p>
-                    <p>Date: 2 mesi fa</p>
+                    <h4><a href="https://www.adnkronos.com/economia/alleanza-assicurazioni-le-priorita-soddisfazione-cliente-e-leadership-su-protezione-e-risparmio_772oMHPPeh3kQ0HUbU7ZG6" target="_blank">Alleanza Assicurazioni le prioritA  | soddisfazione cliente e leadership su protezione e risparmio</a></h4>
+                    <p>Source: www.adnkronos.com</p>
                     <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
                 </div>
                 
                 <div class="article">
-                    <h4><a href="https://www.radiortm.it/2024/12/05/modica-occupiamoci-diripartono-le-assemblee-ed-e-boom-di-partecipanti/&ved=2ahUKEwjyseD9-tSLAxWnGxAIHef9H1kQxfQBegQIARAC&usg=AOvVaw0bH7HlwGDH2AJAAob6U9LT" target="_blank">Modica. Occupiamoci di…ripartono le Assemblee ed è boom di partecipanti</a></h4>
-                    <p>Anna Fidelio, Team Manager di Unidea Assicurazioni di Modica, ha raccontato di come ha iniziato il suo percorso lavorativo dopo gli studi universitari.</p>
-                    <p>Date: 2 mesi fa</p>
+                    <h4><a href="https://www.ilgiornaleditalia.it/news/mondo-imprese/680796/alleanza-assicurazioni-patto-crescita-sostenibile.html" target="_blank">Alleanza Assicurazioni, completato 'Patto per la crescita sostenibile': crescita soddisfazione cliente, leadership su protezione, risparmio e investimenti</a></h4>
+                    <p>Source: www.ilgiornaleditalia.it</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                </div>
+        <div class="company-section">
+            <h2>Unidea Assicurazioni</h2>
+        
+            <div class="reviews">
+                <h3>Customer Reviews</h3>
+                <div class="review-platforms">
+            
+                <div class="review-platform">
+                    <h4>Trustpilot</h4>
+                    <div class="rating">★ 3.8/5</div>
+                    <div class="review-count">Based on 850 reviews</div>
+                    <div class="sample-reviews">
+                
+                    <div class="review">
+                        <div class="review-rating">★★★★☆</div>
+                        <div class="review-text">"Servizio assicurativo affidabile. Prezzi competitivi."</div>
+                        <div class="review-author">- Paolo F.</div>
+                        <div class="review-date">2024-02-14</div>
+                    </div>
+                    
+                    <div class="review">
+                        <div class="review-rating">★★★★☆</div>
+                        <div class="review-text">"Buona esperienza con la polizza auto. Processo semplice."</div>
+                        <div class="review-author">- Maria C.</div>
+                        <div class="review-date">2024-02-09</div>
+                    </div>
+                    
+                    </div>
+                    <a href="https://it.trustpilot.com/review/unidea-assicurazioni.it" target="_blank" class="view-more">View all 850 reviews on Trustpilot →</a>
+                </div>
+                
+                </div>
+            </div>
+            
+            <div class="wordcloud">
+                <img src="wordcloud_Unidea_Assicurazioni.png" alt="Unidea Assicurazioni Word Cloud">
+            </div>
+            
+            <h3>Latest News Articles</h3>
+            
+                <div class="article">
+                    <h4><a href="https://www.tusciaweb.eu/2024/12/la-nostra-mission-offrire-servizio-migliore-famiglie-imprese/#google_vignette" target="_blank">aLa nostra mission A  offrire il servizio migliore a famiglie e impreseaa</a></h4>
+                    <p>Source: www.tusciaweb.eu</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="https://www.polesine24.it/cronaca/2024/12/14/news/sboccia-unidea-assicurazioni-305591/?id=0" target="_blank">Sboccia Unidea Assicurazioni - La Voce di Rovigo</a></h4>
+                    <p>Source: www.polesine24.it</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="https://aostasera.it/notizie/pubbliredazionali/unidea-assicurazioni-un-open-day-per-chi-cerca-una-carriera-di-successo/" target="_blank">Unidea Assicurazioni, un Open day per chi cerca una carriera di successo</a></h4>
+                    <p>Source: aostasera.it</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="https://www.lanazione.it/lucca/cronaca/taglio-del-nastro-a-unidea-assicurazioni-punto-di-convergenza-di-venti-compagnie-68a0741b" target="_blank">Taglio del nastro a Unidea Assicurazioni. Punto di convergenza di venti compagnie</a></h4>
+                    <p>Source: www.lanazione.it</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="https://aostasera.it/notizie/pubbliredazionali/con-unidea-assicurazioni-e-broker-servizi-e-prodotti-su-misura-per-il-cliente/" target="_blank">Con Unidea Assicurazioni e Broker servizi e prodotti su misura per il cliente</a></h4>
+                    <p>Source: aostasera.it</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                </div>
+        <div class="company-section">
+            <h2>Vita Nuova</h2>
+        
+            <div class="reviews">
+                <h3>Customer Reviews</h3>
+                <div class="review-platforms">
+            
+                <div class="review-platform">
+                    <h4>Trustpilot</h4>
+                    <div class="rating">★ 3.9/5</div>
+                    <div class="review-count">Based on 320 reviews</div>
+                    <div class="sample-reviews">
+                
+                    <div class="review">
+                        <div class="review-rating">★★★★☆</div>
+                        <div class="review-text">"Professionalità e competenza nel settore assicurativo."</div>
+                        <div class="review-author">- Luca V.</div>
+                        <div class="review-date">2024-02-17</div>
+                    </div>
+                    
+                    <div class="review">
+                        <div class="review-rating">★★★★☆</div>
+                        <div class="review-text">"Buon rapporto qualità-prezzo per le polizze offerte."</div>
+                        <div class="review-author">- Sofia C.</div>
+                        <div class="review-date">2024-02-15</div>
+                    </div>
+                    
+                    </div>
+                    <a href="https://it.trustpilot.com/review/vitanuova.it" target="_blank" class="view-more">View all 320 reviews on Trustpilot →</a>
+                </div>
+                
+                </div>
+            </div>
+            
+            <div class="wordcloud">
+                <img src="wordcloud_Vita_Nuova.png" alt="Vita Nuova Word Cloud">
+            </div>
+            
+            <h3>Latest News Articles</h3>
+            
+                <div class="article">
+                    <h4><a href="https://www.pltv.it/news-assicurazioni/vitanuova-acquisisce-axieme-nasce-il-principale-broker-assicurativo-phygital-italiano" target="_blank">Vitanuova Acquisisce Axieme, Nasce il Principale Broker ...</a></h4>
+                    <p>Source: www.pltv.it</p>
+                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                </div>
+                
+                <div class="article">
+                    <h4><a href="https://www.pltv.it/news-assicurazioni/vita-nuova-un-ottimo-2022-il-29-del-capitale-e-detenuto-dalla-rete" target="_blank">Vitanuova: un Ottimo 2022. Il 29% del Capitale e detenuto dalla Rete</a></h4>
+                    <p>Source: www.pltv.it</p>
                     <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
                 </div>
                 </div>
@@ -240,23 +286,16 @@
                     <div class="topic-section">
                         <h4>Unique to Alleanza Assicurazioni</h4>
                         <ul class="topic-list">
-                                <li>alleanza</li>
-                            <li>assicurazioni,</li>
-                            <li>assicurazioni:</li>
+                                <li>cliente</li>
                             <li>competenze</li>
                             <li>convention</li>
-                            <li>dalla</li>
-                            <li>grande</li>
-                            <li>priorità</li>
+                            <li>crescere</li>
+                            <li>crescita</li>
+                            <li>leadership</li>
+                            <li>priorita</li>
+                            <li>risparmio</li>
+                            <li>soddisfazione</li>
                             <li>strategiche</li>
-
-                        </ul>
-                    </div>
-    
-                    <div class="topic-section shared">
-                        <h4>Shared Topics</h4>
-                        <ul class="topic-list">
-                                <li>assicurazioni</li>
 
                         </ul>
                     </div>
@@ -264,16 +303,39 @@
                     <div class="topic-section">
                         <h4>Unique to Unidea Assicurazioni</h4>
                         <ul class="topic-list">
-                                <li>anche</li>
-                            <li>assicurazioni.</li>
-                            <li>carriera</li>
+                                <li>assemblee</li>
                             <li>cerca</li>
                             <li>famiglie</li>
+                            <li>migliore</li>
                             <li>mission</li>
-                            <li>nostra</li>
+                            <li>occupiamoci</li>
                             <li>offrire</li>
-                            <li>unidea</li>
+                            <li>partecipanti</li>
+                            <li>rovigo</li>
+                            <li>sboccia</li>
 
+                        </ul>
+                    </div>
+    
+                    <div class="topic-section">
+                        <h4>Unique to Vita Nuova</h4>
+                        <ul class="topic-list">
+                                <li>acquisisce</li>
+                            <li>axieme</li>
+                            <li>broker</li>
+                            <li>capitale</li>
+                            <li>detenuto</li>
+                            <li>nasce</li>
+                            <li>ottimo</li>
+                            <li>principale</li>
+
+                        </ul>
+                    </div>
+    
+                    <div class="topic-section shared">
+                        <h4>Shared Topics</h4>
+                        <ul class="topic-list">
+    
                         </ul>
                     </div>
                 </div>

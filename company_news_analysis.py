@@ -363,7 +363,7 @@ def generate_report(google_news, newsapi_news):
         <title>Company News Analysis Report</title>
         <style>
             body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
-            .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+            .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); position: relative; }
             h1, h2, h3 { color: #333; }
             .company-section { margin-bottom: 40px; padding: 20px; border: 1px solid #ddd; }
             .wordcloud { text-align: center; margin: 20px 0; }
@@ -390,6 +390,7 @@ def generate_report(google_news, newsapi_news):
             .review-date { color: #666; font-size: 0.9em; }
             .view-more { display: inline-block; margin-top: 10px; color: #2196F3; text-decoration: none; }
             .view-more:hover { text-decoration: underline; }
+            .logo { position: absolute; top: 20px; right: 20px; width: 150px; height: auto; }
             .topic-lists { margin: 40px 0; padding: 20px; background: #f9f9f9; border-radius: 8px; }
             .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
             .topic-section { padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
@@ -401,6 +402,7 @@ def generate_report(google_news, newsapi_news):
     </head>
     <body>
         <div class="container">
+            <img src="emerald_logo.png" alt="Emerald Logo" class="logo">
             <h1>Company News Analysis Report</h1>
     """
 
@@ -716,16 +718,11 @@ def extract_topics(text):
     """Extract main topics from text."""
     # Common terms to exclude
     exclude_terms = {
-        # Insurance terms and variations
-        'assicurazioni:', 'assicurazioni', 'assicurazione', 'assicurativo', 'assicurativi', 'assicurativa', 'assicurative',
+        # Insurance terms and variations (expanded)
+        'assicurazioni:', 'assicurazioni.', 'assicurazioni', 'assicurazione:', 'assicurazione.', 'assicurazione',
+        'assicurativo', 'assicurativi', 'assicurativa', 'assicurative', 'assicurata', 'assicurato',
         'polizza', 'polizze', 'polizze', 'protezione',
         'compagnia', 'compagnie', 'società',
-        'agenzia', 'agenzie', 'filiale', 'filiali',
-        'broker', 'brokers', 'intermediario', 'intermediari',
-        'cliente', 'clienti', 'consulente', 'consulenti',
-        'previdenza', 'previdenziale',
-        'risparmio', 'risparmi',
-        'investimento', 'investimenti',
         
         # Company names and variations
         'alleanza', 'unidea', 'vita', 'nuova', 'vitanuova',
@@ -773,16 +770,11 @@ def generate_word_cloud(text, company):
     """Generate word cloud from text."""
     # Common terms to exclude
     exclude_terms = {
-        # Insurance terms and variations
-        'assicurazioni:', 'assicurazioni', 'assicurazione', 'assicurativo', 'assicurativi', 'assicurativa', 'assicurative',
+        # Insurance terms and variations (expanded)
+        'assicurazioni:', 'assicurazioni.', 'assicurazioni', 'assicurazione:', 'assicurazione.', 'assicurazione',
+        'assicurativo', 'assicurativi', 'assicurativa', 'assicurative', 'assicurata', 'assicurato',
         'polizza', 'polizze', 'polizze', 'protezione',
         'compagnia', 'compagnie', 'società',
-        'agenzia', 'agenzie', 'filiale', 'filiali',
-        'broker', 'brokers', 'intermediario', 'intermediari',
-        'cliente', 'clienti', 'consulente', 'consulenti',
-        'previdenza', 'previdenziale',
-        'risparmio', 'risparmi',
-        'investimento', 'investimenti',
         
         # Company names and variations
         'alleanza', 'unidea', 'vita', 'nuova', 'vitanuova',
