@@ -7,7 +7,7 @@ COMPANY_NAMES = [
 COMPANY_VARIATIONS = {
     "Alleanza Assicurazioni": ["Alleanza", "Alleanza Assicurazioni", "Alleanza Assicurazioni S.p.A."],
     "Unidea Assicurazioni": ["Unidea", "Unidea Assicurazioni", "Unidea Assicurazioni S.p.A."],
-    "Vita Nuova": ["Vita Nuova", "Vita Nuova Assicurazioni", "Vita Nuova S.p.A."]
+    "Vita Nuova": ["Vita Nuova", "Vita Nuova Assicurazioni", "vitanuova.it", "VitaNuova.it", "Vita Nuova S.p.A."]
 }
 
 NEWS_SEARCH = {

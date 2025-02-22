@@ -9,52 +9,94 @@ This tool performs automated news analysis for multiple insurance companies by f
 - **Multi-source Integration**
   - Google News API (last 6 months)
   - NewsAPI (configurable time range)
+  - Domain-specific search (e.g., vitanuova.it)
   - Automatic deduplication of articles
-  - URL cleaning and normalization
+  - URL validation and correction
 
 ### Text Analysis
 - **Word Clouds**
   - Minimum word length: 5 letters
-  - Excludes company names and insurance-related terms
+  - Excludes company names and common terms
   - Custom stop words for Italian language
   - Maximum 30 most frequent words
+  - Company-specific visualizations
 
 - **Sentiment Analysis**
   - Sentiment scoring for each article (-1 to +1)
-  - Color-coded sentiment indicators
+  - Color-coded sentiment indicators (green/red/gray)
   - Aggregate sentiment analysis per company
+  - Real-time sentiment calculation
 
 - **Topic Analysis**
   - Interactive Venn diagram for topic overlaps
-  - Top topics per company
-  - Common themes identification
+  - Detailed topic breakdown by company:
+    - Unique topics per company
+    - Shared topics between pairs
+    - Common themes across all companies
   - Topic frequency analysis
+  - Minimum word length filtering
 
 ### Reviews Integration
-- **Multiple Sources**
-  - Google Reviews integration
-  - Trustpilot reviews
+- **Trustpilot Integration**
   - Rating aggregation
+  - Review previews
+  - Direct links to review pages
   - Customer feedback analysis
 
 ### Interactive HTML Report
 - **Modern UI Design**
   - Responsive layout
-  - Armani-style grayscale theme
+  - Clean, professional theme
   - Mobile-friendly design
   - Interactive elements
+  - Consistent section styling
 
 - **Content Organization**
   - Company-specific sections
   - Latest news prioritization
-  - "Show More" functionality
+  - Review previews with "View more" links
   - Direct links to source articles
+  - Clear section separation
 
-- **Visualizations**
-  - Word clouds per company
-  - Topic overlap Venn diagram
-  - Sentiment trend visualization
-  - Review rating distribution
+### Company-Specific Features
+- **Alleanza Assicurazioni**
+  - Ultra-strict filtering to exclude non-insurance "alleanza" mentions
+  - Multiple insurance context validation
+  - Company-specific term verification
+  - Trustpilot reviews integration
+
+- **Unidea Assicurazioni**
+  - Insurance context validation
+  - Specific term matching
+  - Topic analysis
+
+- **Vita Nuova**
+  - Domain-specific search (vitanuova.it)
+  - Insurance context validation
+  - Strict filtering of "nuova vita" mentions
+
+## Known Limitations and Pending Improvements
+
+### Current Issues
+1. **Review Sources**
+   - Google Maps links need replacement with proper review search
+   - Review source consolidation needed
+
+2. **URL Validation**
+   - Some news article URLs may be invalid
+   - URL correction system being implemented
+   - Enhanced validation in progress
+
+### Planned Fixes
+1. **Review System Enhancement**
+   - Implementing direct Google search for reviews
+   - Focusing on Trustpilot as primary review source
+   - Improving review link validation
+
+2. **URL System Improvement**
+   - Adding URL correction mechanisms
+   - Enhancing validation logic
+   - Implementing URL testing before inclusion
 
 ## Installation
 
@@ -69,24 +111,18 @@ cd [repository-name]
 pip install -r requirements.txt
 ```
 
-3. Download required NLTK data:
-```bash
-python download_nltk_data.py
-```
-
-4. Create a `.env` file with your NewsAPI key:
+3. Create a `.env` file with your NewsAPI key:
 ```
 NEWS_API_KEY=your_api_key_here
 ```
 
 ## Configuration
 
-### Company Settings
-Configure target companies in `config.py`:
-- Company names
-- Name variations
+### Company Settings (`config.py`)
+- Company names and variations
 - Search parameters
 - Language settings
+- Insurance-related terms
 
 ### API Settings
 - NewsAPI configuration
@@ -109,74 +145,13 @@ The script will:
 
 ## Output Files
 
-- `results/sentiment_report.html`: Main interactive report
-- `results/wordcloud_*.png`: Word cloud visualizations
-- `results/venn_diagram.png`: Topic overlap analysis
-- Additional analysis files in the results directory
-
-## Current Limitations
-
-- NewsAPI free tier limitations (time range, request quota)
-- Manual review data for demonstration
-- Single language support (Italian)
-- Limited sentiment analysis model
-
-## Future Improvements
-
-### Short-term
-- [ ] Add more news sources
-- [ ] Implement automated review scraping
-- [ ] Enhance sentiment analysis accuracy
-- [ ] Add export options (PDF, CSV)
-
-### Medium-term
-- [ ] Multi-language support
-- [ ] Custom sentiment models
-- [ ] Historical trend analysis
-- [ ] API rate limiting optimization
-
-### Long-term
-- [ ] Machine learning classification
-- [ ] Real-time updates
-- [ ] Advanced NLP features
-- [ ] Competitor analysis
-
-## Technical Details
-
-### Word Cloud Generation
-- Minimum word length: 5 characters
-- Excluded terms: company names, common insurance terms
-- Custom stop words
-- Maximum words: 30
-- Font: Arial
-- Resolution: 1200x600
-
-### Venn Diagram
-- Three-set visualization
-- Topic frequency weighting
-- Custom positioning
-- Armani-style color scheme
-
-### HTML Report
-- Modern CSS Grid layout
-- Responsive design
-- Interactive JavaScript elements
-- Custom typography
+- `sentiment_report.html`: Main interactive report
+- `wordcloud_*.png`: Word cloud visualizations
+- `venn_diagram.png`: Topic overlap analysis
+- Additional analysis files in backup directories
 
 ## Dependencies
-```
-requests==2.31.0
-beautifulsoup4==4.12.2
-textblob==0.17.1
-feedparser==6.0.10
-transformers==4.37.2
-torch==2.2.0
-wordcloud==1.9.3
-matplotlib==3.8.2
-GoogleNews==1.6.12
-pillow==10.2.0
-python-dotenv==1.0.1
-```
+See `requirements.txt` for the complete list of dependencies.
 
 ## Contributing
 Contributions are welcome! Please read our contributing guidelines and submit pull requests for any improvements.
@@ -184,20 +159,37 @@ Contributions are welcome! Please read our contributing guidelines and submit pu
 ## License
 [Specify License]
 
-## Contact
-[Your Contact Information]
-
 ## Changelog
+
+### Version 1.1.2 (2024-02-22)
+- Improved topic analysis filtering
+  - Removed common terms and adverbs
+  - Enhanced punctuation handling
+  - Better exclusion of generic business terms
+- Enhanced Venn diagram readability with wrapped labels
+- Implemented robust backup system with timestamped directories
+- Fixed duplicate article handling in reports
+- Added URL validation and master URL system
+- Improved CSV-based data persistence
+
+### Version 1.1.1 (2024-02-21)
+- Removing Google Maps review links
+- Implementing proper Google review search
+- Enhancing URL validation system
+- Improving review source handling
+- Adding URL correction mechanisms
+
+### Version 1.1.0 (2024-02-21)
+- Added Vita Nuova section with domain-specific search
+- Enhanced topic analysis with detailed breakdowns
+- Improved review section with preview and links
+- Added backup system with timestamps
+- Updated filtering logic for all companies
+- Enhanced HTML report styling and organization
 
 ### Version 1.0.0 (2024-02-20)
 - Initial release
 - Basic news aggregation
 - Sentiment analysis
 - Word cloud visualization
-- Interactive HTML report
-
-### Version 1.1.0 (2024-02-20)
-- Added minimum word length (5 letters) for word clouds
-- Enhanced topic analysis
-- Improved HTML report styling
-- Added company reviews section 
+- Interactive HTML report 
