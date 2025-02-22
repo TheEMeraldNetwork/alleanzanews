@@ -75,6 +75,25 @@ This tool performs automated news analysis for multiple insurance companies by f
   - Insurance context validation
   - Strict filtering of "nuova vita" mentions
 
+### RAG-Powered Assistant (Coming Soon)
+- **Knowledge-Base First Approach**
+  - Prioritizes dashboard's existing knowledge base
+  - Sources answers from saved articles and reviews
+  - Provides direct references to source materials
+  - Clear distinction between local and web sources
+
+- **Strict RAG Implementation**
+  - Focused on retrieval and citation
+  - No general-purpose LLM responses
+  - Mandatory source attribution
+  - Verifiable information only
+
+- **Integration**
+  - Emerald-styled chat interface
+  - Real-time article access
+  - Review data integration
+  - Web search capabilities when needed
+
 ## Known Limitations and Pending Improvements
 
 ### Current Issues
@@ -160,6 +179,13 @@ Contributions are welcome! Please read our contributing guidelines and submit pu
 [Specify License]
 
 ## Changelog
+
+### Version 1.2.0 (Planned)
+- Adding RAG-powered Emerald Assistant
+  - Knowledge base integration
+  - Source attribution system
+  - Web search capabilities
+  - Emerald-styled chat interface
 
 ### Version 1.1.2 (2024-02-22)
 - Improved topic analysis filtering
