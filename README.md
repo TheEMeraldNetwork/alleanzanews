@@ -158,10 +158,20 @@ See `requirements.txt` for the complete list of dependencies.
 ├── requirements.txt         # Python dependencies
 ├── .env                     # API keys and environment variables
 ├── sentiment_report.html    # Generated dashboard
+├── validate_articles.py     # Article validation and title normalization
 └── README.md               # Documentation
 ```
 
 ## Changelog
+
+### Version 1.2.2 (2024-02-23)
+- Added article validation script with improved title normalization:
+  - Enhanced handling of accented characters
+  - Better handling of ellipsis and subtitles
+  - Improved duplicate detection
+- Updated sentiment report with validated articles
+- Added new logo assets and styling improvements
+- Created backup checkpoint (20250223_1021)
 
 ### Version 1.2.1 (2024-02-23)
 - Improved Cross-Analysis section UI:
