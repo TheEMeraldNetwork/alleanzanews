@@ -163,6 +163,18 @@ See `requirements.txt` for the complete list of dependencies.
 
 ## Changelog
 
+### Version 1.2.1 (2024-02-23)
+- Improved Cross-Analysis section UI:
+  - Removed black backgrounds for better readability
+  - Consistent styling between Topics Overlap and Topics by Company
+  - Enhanced construction banner design
+  - Optimized Venn diagram sizing
+  - Better mobile responsiveness
+- General UI improvements:
+  - Cleaner white backgrounds throughout
+  - More consistent section styling
+  - Enhanced typography and spacing
+
 ### Version 1.2.0 (2024-02-22)
 - Added AI-powered Emerald Assistant chatbot
   - Real-time query processing

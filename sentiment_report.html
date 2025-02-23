@@ -48,7 +48,7 @@
 
         /* Hero Section */
         .hero {
-            height: 120px;
+            height: 100px;
             background-image: url('space-background-with-comet-flying-towards-planet.jpg');
             background-size: cover;
             background-position: center;
@@ -74,6 +74,9 @@
             position: relative;
             z-index: 1;
             max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .hero p {
@@ -82,6 +85,12 @@
             font-weight: 300;
             letter-spacing: 0.02em;
             margin: 0;
+        }
+
+        .hero .arrow-down {
+            font-size: 1.5em;
+            margin-top: 5px;
+            color: #ffffff;
         }
 
         /* Navigation Menu */
@@ -437,7 +446,8 @@
     <!-- Hero Section -->
     <div class="hero">
         <div class="hero-content">
-            <p>Navigating the business universe</p>
+            <p>Discover companies web news.</p>
+            <div class="arrow-down">↓</div>
         </div>
     </div>
 
@@ -532,67 +542,48 @@
             <div class="section-content" data-content="articles">
                 <h3>Latest News Articles</h3>
                 
+                <div class="articles" data-content="articles">
                     <div class="article">
-                        <h4><a href="https://www.pltv.it/tv/reportage/claudia-ghinfanti-alleanza-ass-in-atto-un-grande-trasferimento-di-competenze-dalla-rete-ai-clienti" target="_blank">Claudia Ghinfanti (Alleanza Ass.): "In atto un grande Trasferimento di Competenze dalla Rete ai Clienti"</a></h4>
-                        <p>Source: www.pltv.it</p>
-                        <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                        <h4>Claudia Ghinfanti (Alleanza Ass.): "In atto un grande Trasferimento di Competenze dalla Rete ai Clienti"</h4>
+                        <a href="https://www.pltv.it/tv/reportage/claudia-ghinfanti-alleanza-ass-in-atto-un-grande-trasferimento-di-competenze-dalla-rete-ai-clienti" target="_blank">Leggi l'articolo</a>
                     </div>
-
                     <div class="article">
-                        <h4><a href="https://www.pltv.it/tv/reportage/ezio-peroni-alleanza-ass-intelligenza-artificiale-amplificatrice-della-capacita-umana-degli-agenti" target="_blank">Ezio Peroni (Alleanza Ass.): "Intelligenza artificiale amplificatrice della capacità umana degli agenti"</a></h4>
-                        <p>Source: www.pltv.it</p>
-                        <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                        <h4>Alleanza Assicurazioni: dalla convention le prioritA strategiche per crescere</h4>
+                        <a href="https://www.wallstreetitalia.com/alleanza-assicurazioni-dalla-convention-le-priorita-strategiche-per-crescere" target="_blank">Leggi l'articolo</a>
                     </div>
-                    
                     <div class="article">
-                        <h4><a href="https://www.wallstreetitalia.com/alleanza-assicurazioni-dalla-convention-le-priorita-strategiche-per-crescere/" target="_blank">Alleanza Assicurazioni: dalla convention le prioritA  strategiche per crescere</a></h4>
-                        <p>Source: www.wallstreetitalia.com</p>
-                        <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                        <h4>Alleanza Assicurazioni: i numeri del aPatto per la crescita sostenibilea tra nuove competenze finanziarie e IA</h4>
+                        <a href="https://www.msn.com/it-it/money/notizie/alleanza-assicurazioni-i-numeri-del-patto-per-la-crescita-sostenibile-tra-nuove-competenze-finanziarie-e-ia/ar-AA1yxe1I" target="_blank">Leggi l'articolo</a>
                     </div>
-                    
                     <div class="article">
-                        <h4><a href="https://www.msn.com/it-it/money/notizie/alleanza-assicurazioni-i-numeri-del-patto-per-la-crescita-sostenibile-tra-nuove-competenze-finanziarie-e-ia/ar-AA1yxe1I" target="_blank">Alleanza Assicurazioni: i numeri del aPatto per la crescita sostenibilea tra nuove competenze finanziarie e IA</a></h4>
-                        <p>Source: www.msn.com</p>
-                        <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                        <h4>Alleanza Assicurazioni le prioritA | soddisfazione cliente e leadership su protezione e risparmio</h4>
+                        <a href="https://www.adnkronos.com/economia/alleanza-assicurazioni-le-priorita-soddisfazione-cliente-e-leadership-su-protezione-e-risparmio_772oMHPPeh3kQ0HUbU7ZG6" target="_blank">Leggi l'articolo</a>
                     </div>
-                    
                     <div class="article">
-                        <h4><a href="https://www.adnkronos.com/economia/alleanza-assicurazioni-le-priorita-soddisfazione-cliente-e-leadership-su-protezione-e-risparmio_772oMHPPeh3kQ0HUbU7ZG6" target="_blank">Alleanza Assicurazioni le prioritA  | soddisfazione cliente e leadership su protezione e risparmio</a></h4>
-                        <p>Source: www.adnkronos.com</p>
-                        <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                        <h4>Alleanza Assicurazioni, completato 'Patto per la crescita sostenibile': crescita soddisfazione cliente, leadership su protezione, risparmio e investimenti</h4>
+                        <a href="https://www.ilgiornaleditalia.it/news/mondo-imprese/680796/alleanza-assicurazioni-patto-crescita-sostenibile.html" target="_blank">Leggi l'articolo</a>
                     </div>
-
-                    <div style="text-align: center; margin-top: 20px;">
-                        <button onclick="toggleMoreArticles()" style="padding: 10px 20px; background-color: #2196F3; color: white; border: none; border-radius: 4px; cursor: pointer;">Show More Articles</button>
+                    <div class="article">
+                        <h4>ALLEANZA ASSICURAZIONI PRESENTA LE PRIORITAa STRATEGICHE</h4>
+                        <a href="https://finanza.lastampa.it/News/2025/02/06/alleanza-assicurazioni-passero-presenta-le-priorita-strategiche/MjAzXzIwMjUtMDItMDZfVExC" target="_blank">Leggi l'articolo</a>
                     </div>
-
-                    <div id="moreArticles" style="display: none;">
-                        <div class="article">
-                            <h4><a href="https://www.ilgiornaleditalia.it/news/mondo-imprese/680796/alleanza-assicurazioni-patto-crescita-sostenibile.html" target="_blank">Alleanza Assicurazioni, completato 'Patto per la crescita sostenibile': crescita soddisfazione cliente, leadership su protezione, risparmio e investimenti</a></h4>
-                            <p>Source: www.ilgiornaleditalia.it</p>
-                            <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
-                        </div>
-                        
-                        <div class="article">
-                            <h4><a href="https://finanza.lastampa.it/News/2025/02/06/alleanza-assicurazioni-passero-presenta-le-priorita-strategiche/MjAzXzIwMjUtMDItMDZfVExC" target="_blank">ALLEANZA ASSICURAZIONI PRESENTA LE PRIORITAa STRATEGICHE</a></h4>
-                            <p>Source: finanza.lastampa.it</p>
-                            <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
-                        </div>
+                    <div class="article">
+                        <h4>Alleanza Assicurazioni: i numeri del Patto per la crescita sostenibile tra nuove competenze finanziarie e IA</h4>
+                        <a href="https://www.msn.com/it-it/money/notizie/alleanza-assicurazioni-i-numeri-del-patto-per-la-crescita-sostenibile-tra-nuove-competenze-finanziarie-e-ia/ar-AA1yxe1I?ocid=finance-verthp-feeds" target="_blank">Leggi l'articolo</a>
                     </div>
-
-                    <script>
-                        function toggleMoreArticles() {
-                            var moreArticles = document.getElementById('moreArticles');
-                            var button = event.target;
-                            if (moreArticles.style.display === 'none') {
-                                moreArticles.style.display = 'block';
-                                button.textContent = 'Show Less Articles';
-                            } else {
-                                moreArticles.style.display = 'none';
-                                button.textContent = 'Show More Articles';
-                            }
-                        }
-                    </script>
+                    <div class="article">
+                        <h4>Alleanza Assicurazioni, Passero presenta le priorità strategiche</h4>
+                        <a href="https://www.teleborsa.it/AMP/News/2025/02/06/alleanza-assicurazioni-passero-presenta-le-priorita-strategiche-203.html" target="_blank">Leggi l'articolo</a>
+                    </div>
+                    <div class="article">
+                        <h4>Generali, presentate le priorità strategiche di Alleanza Assicurazioni alla Convention 2025</h4>
+                        <a href="https://www.affaritaliani.it/economia/notizie-aziende/generali-presentate-priorita-strategiche-alleanza-assicurazioni-convention-2025-955402.html" target="_blank">Leggi l'articolo</a>
+                    </div>
+                    <div class="article">
+                        <h4>Ezio Peroni (Alleanza Ass.): "Intelligenza artificiale amplificatrice della capacità umana degli agenti"</h4>
+                        <a href="https://www.pltv.it/tv/reportage/ezio-peroni-alleanza-ass-intelligenza-artificiale-amplificatrice-della-capacita-umana-degli-agenti" target="_blank">Leggi l'articolo</a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="company-section" data-company="unidea">
@@ -641,30 +632,35 @@
             
             <div class="section-content" data-content="articles">
                 <h3>Latest News Articles</h3>
-                <div class="article">
-                    <h4><a href="https://www.tusciaweb.eu/2024/12/la-nostra-mission-offrire-servizio-migliore-famiglie-imprese/#google_vignette" target="_blank">La nostra mission è offrire il servizio migliore a famiglie e imprese</a></h4>
-                    <p>Source: www.tusciaweb.eu</p>
-                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
-                </div>
-                <div class="article">
-                    <h4><a href="https://www.polesine24.it/cronaca/2024/12/14/news/sboccia-unidea-assicurazioni-305591/?id=0" target="_blank">Sboccia Unidea Assicurazioni - La Voce di Rovigo</a></h4>
-                    <p>Source: www.polesine24.it</p>
-                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
-                </div>
-                <div class="article">
-                    <h4><a href="https://aostasera.it/notizie/pubbliredazionali/unidea-assicurazioni-un-open-day-per-chi-cerca-una-carriera-di-successo/" target="_blank">Unidea Assicurazioni, un Open day per chi cerca una carriera di successo</a></h4>
-                    <p>Source: aostasera.it</p>
-                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
-                </div>
-                <div class="article">
-                    <h4><a href="https://www.lanazione.it/lucca/cronaca/taglio-del-nastro-a-unidea-assicurazioni-punto-di-convergenza-di-venti-compagnie-68a0741b" target="_blank">Taglio del nastro a Unidea Assicurazioni. Punto di convergenza di venti compagnie</a></h4>
-                    <p>Source: www.lanazione.it</p>
-                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
-                </div>
-                <div class="article">
-                    <h4><a href="https://aostasera.it/notizie/pubbliredazionali/con-unidea-assicurazioni-e-broker-servizi-e-prodotti-su-misura-per-il-cliente/" target="_blank">Con Unidea Assicurazioni e Broker servizi e prodotti su misura per il cliente</a></h4>
-                    <p>Source: aostasera.it</p>
-                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+                <div class="articles" data-content="articles">
+                    <div class="article">
+                        <h4>aLa nostra mission A offrire il servizio migliore a famiglie e impresea</h4>
+                        <a href="https://www.tusciaweb.eu/2024/12/la-nostra-mission-offrire-servizio-migliore-famiglie-imprese/#google_vignette" target="_blank">Leggi l'articolo</a>
+                    </div>
+                    <div class="article">
+                        <h4>Sboccia Unidea Assicurazioni - La Voce di Rovigo</h4>
+                        <a href="https://www.polesine24.it/cronaca/2024/12/14/news/sboccia-unidea-assicurazioni-305591/?id=0" target="_blank">Leggi l'articolo</a>
+                    </div>
+                    <div class="article">
+                        <h4>Unidea Assicurazioni, un Open day per chi cerca una carriera di successo</h4>
+                        <a href="https://aostasera.it/notizie/pubbliredazionali/unidea-assicurazioni-un-open-day-per-chi-cerca-una-carriera-di-successo/" target="_blank">Leggi l'articolo</a>
+                    </div>
+                    <div class="article">
+                        <h4>Taglio del nastro a Unidea Assicurazioni. Punto di convergenza di venti compagnie</h4>
+                        <a href="https://www.lanazione.it/lucca/cronaca/taglio-del-nastro-a-unidea-assicurazioni-punto-di-convergenza-di-venti-compagnie-68a0741b" target="_blank">Leggi l'articolo</a>
+                    </div>
+                    <div class="article">
+                        <h4>Con Unidea Assicurazioni e Broker servizi e prodotti su misura per il cliente</h4>
+                        <a href="https://aostasera.it/notizie/pubbliredazionali/con-unidea-assicurazioni-e-broker-servizi-e-prodotti-su-misura-per-il-cliente/" target="_blank">Leggi l'articolo</a>
+                    </div>
+                    <div class="article">
+                        <h4>La nostra mission e offrire il servizio migliore a famiglie e imprese...</h4>
+                        <a href="https://www.tusciaweb.eu/2024/12/la-nostra-mission-offrire-servizio-migliore-famiglie-imprese" target="_blank">Leggi l'articolo</a>
+                    </div>
+                    <div class="article">
+                        <h4>Modica. Occupiamoci di...ripartono le Assemblee ed e boom di partecipanti</h4>
+                        <a href="https://www.radiortm.it/2024/12/05/modica-occupiamoci-diripartono-le-assemblee-ed-e-boom-di-partecipanti" target="_blank">Leggi l'articolo</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -717,18 +713,17 @@
                 </div>
             </div>
             
-            <h3>Latest News Articles</h3>
-            
-                <div class="article">
-                    <h4><a href="https://www.pltv.it/news-assicurazioni/vitanuova-acquisisce-axieme-nasce-il-principale-broker-assicurativo-phygital-italiano" target="_blank">Vitanuova Acquisisce Axieme, Nasce il Principale Broker ...</a></h4>
-                    <p>Source: www.pltv.it</p>
-                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
-                </div>
-                
-                <div class="article">
-                    <h4><a href="https://www.pltv.it/news-assicurazioni/vita-nuova-un-ottimo-2022-il-29-del-capitale-e-detenuto-dalla-rete" target="_blank">Vitanuova: un Ottimo 2022. Il 29% del Capitale e detenuto dalla Rete</a></h4>
-                    <p>Source: www.pltv.it</p>
-                    <p>Sentiment: <span class="sentiment neutral">Neutral</span></p>
+            <div class="section-content" data-content="articles">
+                <h3>Latest News Articles</h3>
+                <div class="articles">
+                    <div class="article">
+                        <h4>Vitanuova Acquisisce Axieme, Nasce il Principale Broker ...</h4>
+                        <a href="https://www.pltv.it/news-assicurazioni/vitanuova-acquisisce-axieme-nasce-il-principale-broker-assicurativo-phygital-italiano" target="_blank">Leggi l'articolo</a>
+                    </div>
+                    <div class="article">
+                        <h4>Vitanuova: un Ottimo 2022. Il 29% del Capitale e detenuto dalla Rete</h4>
+                        <a href="https://www.pltv.it/news-assicurazioni/vita-nuova-un-ottimo-2022-il-29-del-capitale-e-detenuto-dalla-rete" target="_blank">Leggi l'articolo</a>
+                    </div>
                 </div>
             </div>
         </div>
