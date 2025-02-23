@@ -1,7 +1,7 @@
 import os
 import json
 from datetime import datetime, timedelta
-from collections import Counter
+from collections import Counter, defaultdict
 from GoogleNews import GoogleNews
 import requests
 from bs4 import BeautifulSoup
@@ -21,6 +21,7 @@ import time
 import random
 import csv
 import unicodedata
+import re
 
 # Load environment variables
 load_dotenv()
@@ -1055,8 +1056,8 @@ def read_url_mappings():
                 title = normalize_text(row['Article Title'])
                 existing_titles.add(title)
                 
-                if row['Original URL']:
-                    url_mappings[row['Original URL']] = {
+                if row['Master URL for HTML']:
+                    url_mappings[row['Master URL for HTML']] = {
                         'human_validated_url': row['Human Validated URL'],
                         'master_url': row['Master URL for HTML'],
                         'source': row['Source']
@@ -1104,7 +1105,7 @@ def save_url_analysis(articles, url_mappings, existing_titles, last_id):
         human_validated_url = mapping.get('human_validated_url', '')
         
         # Determine master URL and source
-        if human_validated_url and human_validated_url.lower() != 'no':
+        if human_validated_url and human_validated_url.upper() not in ['NO', 'DUPLICATE', 'FALSE_POSITIVE']:
             master_url = human_validated_url
             source = 'Human'
         else:
@@ -1252,10 +1253,96 @@ def fetch_news():
     return google_news, newsapi_news
 
 if __name__ == "__main__":
-    print("Fetching news articles...")
-    google_news, newsapi_news = fetch_news()
+    print("Reading validated articles from CSV...")
     
-    print("\nGenerating report...")
-    report_path = generate_report(google_news, newsapi_news)
+    # Read articles from CSV
+    articles_by_company = defaultdict(list)
+    valid_article_count = defaultdict(int)
     
-    print(f"\nReport generated successfully at: {report_path}") 
+    # Track lowest ID for each normalized title to avoid duplicates
+    title_to_lowest_id = {}
+    title_to_data = {}
+    
+    def normalize_title(title):
+        """Normalize title for comparison by removing special characters, accents, and whitespace."""
+        # Convert to lowercase
+        title = title.lower()
+        
+        # Replace accented characters
+        replacements = {
+            'à': 'a', 'è': 'e', 'é': 'e', 'ì': 'i', 'ò': 'o', 'ù': 'u',
+            'a\'': 'a', 'e\'': 'e', 'i\'': 'i', 'o\'': 'o', 'u\'': 'u',
+            'aa': 'a', 'ee': 'e', 'ii': 'i', 'oo': 'o', 'uu': 'u'
+        }
+        for old, new in replacements.items():
+            title = title.replace(old, new)
+        
+        # Remove ellipsis variations
+        title = re.sub(r'\.{3,}$', '', title)
+        title = re.sub(r'\s*\.\.\.$', '', title)
+        title = re.sub(r'\s*…$', '', title)
+        
+        # Remove special characters but keep spaces between words
+        title = re.sub(r'[^\w\s]', '', title)
+        
+        # Normalize whitespace
+        title = ' '.join(title.split())
+        
+        # Remove common article variations
+        title = re.sub(r'\s+\-\s+.*$', '', title)  # Remove subtitles after dash
+        title = re.sub(r'\s+\|\s+.*$', '', title)  # Remove subtitles after pipe
+        
+        return title
+    
+    # First pass: Find lowest ID for each title
+    with open('url_analysis.csv', 'r', encoding='utf-8', newline='') as f:
+        reader = csv.DictReader(f, delimiter=';')
+        for row in reader:
+            if row['Master URL for HTML']:  # Only consider rows with Master URL
+                title = normalize_title(row['Article Title'])
+                current_id = int(row['ID'])
+                if title not in title_to_lowest_id or current_id < title_to_lowest_id[title]:
+                    title_to_lowest_id[title] = current_id
+                    title_to_data[title] = {
+                        'id': current_id,
+                        'title': row['Article Title'],
+                        'url': row['Master URL for HTML'],
+                        'company': row['Company']
+                    }
+    
+    # Second pass: Collect unique articles with lowest IDs
+    with open('url_analysis.csv', 'r', encoding='utf-8', newline='') as f:
+        reader = csv.DictReader(f, delimiter=';')
+        for row in reader:
+            if row['Master URL for HTML']:
+                company = row['Company']
+                title = normalize_title(row['Article Title'])
+                current_id = int(row['ID'])
+                
+                # Only add if this is the lowest ID for this title
+                if current_id == title_to_lowest_id[title]:
+                    articles_by_company[company].append(title_to_data[title])
+                    valid_article_count[company] += 1
+    
+    print("\nGenerating word clouds from validated articles...")
+    for company in COMPANY_NAMES:
+        articles = articles_by_company[company]
+        if articles:
+            print(f"\nProcessing {valid_article_count[company]} articles for {company}")
+            # Combine all text for the company
+            text = ' '.join(article['title'] for article in articles)
+            # Generate and save word cloud
+            wordcloud = generate_word_cloud(text, company)
+            plt.figure(figsize=(12, 6))
+            plt.imshow(wordcloud, interpolation='bilinear')
+            plt.axis('off')
+            plt.title(f'{company} ({valid_article_count[company]} articles)')
+            plt.savefig(f'wordcloud_{company.replace(" ", "_")}.png', 
+                        bbox_inches='tight',
+                        dpi=300,
+                        facecolor='white',
+                        edgecolor='none')
+            plt.close()
+            print(f"Word cloud generated for {company}")
+    
+    print("\nWord clouds generated successfully!") 
