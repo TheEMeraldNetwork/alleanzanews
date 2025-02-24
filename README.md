@@ -12,9 +12,12 @@ This tool performs automated news analysis for multiple insurance companies by f
   - Domain-specific search (e.g., vitanuova.it)
   - Automatic deduplication of articles
   - URL validation and correction
+  - CSV-based article validation system
+  - Title normalization for accurate duplicate detection
 
 ### Text Analysis
 - **Word Clouds**
+  - Generated from validated unique articles
   - Minimum word length: 5 letters
   - Excludes company names and common terms
   - Custom stop words for Italian language
@@ -85,16 +88,47 @@ This tool performs automated news analysis for multiple insurance companies by f
   - Multiple insurance context validation
   - Company-specific term verification
   - Trustpilot reviews integration
+  - 9 validated unique articles
 
 - **Unidea Assicurazioni**
   - Insurance context validation
   - Specific term matching
   - Topic analysis
+  - 6 validated unique articles
 
 - **Vita Nuova**
   - Domain-specific search (vitanuova.it)
   - Insurance context validation
   - Strict filtering of "nuova vita" mentions
+  - 2 validated unique articles
+
+## Article Validation Workflow
+1. **CSV Management**
+   - Articles stored in `url_analysis.csv`
+   - Each article has unique ID and validation status
+   - Master URL for HTML field tracks canonical URLs
+   - Duplicate detection through title normalization
+
+2. **Title Normalization**
+   - Removes special characters and accents
+   - Handles ellipsis variations
+   - Normalizes whitespace
+   - Removes subtitles after dash or pipe
+   - Ensures consistent comparison
+
+3. **Validation Process**
+   - Articles marked with flag=1 are considered valid
+   - Duplicates marked with flag=0 and "DUPLICATE" note
+   - False positives marked with "FALSE_POSITIVE"
+   - Each company has fixed number of valid articles:
+     - Alleanza Assicurazioni: 9 articles
+     - Unidea Assicurazioni: 6 articles
+     - Vita Nuova: 2 articles
+
+4. **HTML Report Generation**
+   - Only validated articles appear in HTML
+   - Word clouds generated from validated articles
+   - Automatic validation script ensures consistency
 
 ## Installation
 
@@ -132,6 +166,11 @@ Then open your browser and navigate to:
 http://localhost:5000
 ```
 
+### Validating Articles
+```bash
+python validate_articles.py
+```
+
 ## Configuration
 
 ### Company Settings (`config.py`)
@@ -159,10 +198,19 @@ See `requirements.txt` for the complete list of dependencies.
 ├── .env                     # API keys and environment variables
 ├── sentiment_report.html    # Generated dashboard
 ├── validate_articles.py     # Article validation and title normalization
+├── url_analysis.csv        # Master source for validated articles
 └── README.md               # Documentation
 ```
 
 ## Changelog
+
+### Version 1.2.3 (2024-02-24)
+- Enhanced article validation system:
+  - Improved title normalization for better duplicate detection
+  - Added "valid article and URL" flag in CSV
+  - Fixed duplicate handling between articles 22 and 28
+  - Updated word clouds to reflect validated articles only
+  - Created backup checkpoint (20250224_0925)
 
 ### Version 1.2.2 (2024-02-23)
 - Added article validation script with improved title normalization:
