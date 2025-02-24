@@ -206,6 +206,14 @@ See `requirements.txt` for the complete list of dependencies.
 
 ## Changelog
 
+### Version 1.2.4 (2024-02-24)
+- Migrated repository to interstellar:
+  - Updated all repository URLs and references
+  - Updated HTML redirects and base URLs
+  - Created backup checkpoint (20250224_1024)
+  - Enhanced security by removing sensitive files
+  - Updated documentation with new repository information
+
 ### Version 1.2.3 (2024-02-24)
 - Enhanced article validation system:
   - Improved title normalization for better duplicate detection
