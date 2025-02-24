@@ -3,6 +3,8 @@
 ## Overview
 This tool performs automated news analysis for multiple insurance companies by fetching news from both Google News and NewsAPI. It generates a comprehensive, interactive HTML report with sentiment analysis, word clouds, topic overlap visualization, and an integrated AI chatbot assistant.
 
+View the live dashboard: [Interstellar Company Radar](https://theemeraldnetwork.github.io/interstellar/sentiment_report.html)
+
 ## Features
 
 ### News Aggregation
@@ -134,8 +136,8 @@ This tool performs automated news analysis for multiple insurance companies by f
 
 1. Clone the repository:
 ```bash
-git clone [repository-url]
-cd [repository-name]
+git clone https://github.com/TheEmeraldNetwork/interstellar.git
+cd interstellar
 ```
 
 2. Install required packages:

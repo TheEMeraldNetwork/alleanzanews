@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, redirect
 from flask_cors import CORS
 from emerald_rag import EmeraldAssistant
 import os
@@ -11,6 +11,10 @@ assistant = EmeraldAssistant()
 
 @app.route('/')
 def serve_report():
+    return redirect('https://theemeraldnetwork.github.io/interstellar/sentiment_report.html')
+
+@app.route('/sentiment_report.html')
+def serve_local_report():
     return send_from_directory('.', 'sentiment_report.html')
 
 @app.route('/api/chat', methods=['POST'])
